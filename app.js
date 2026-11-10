@@ -9,48 +9,50 @@ const I18N = {
     pageTitle: '2026 海洋科学开放日 · 场馆地图',
     siteTitle: '海洋科学开放日',
     siteSubtitle: '场馆地图与参观指引',
-    heroLead: '欢迎来到',
-    heroTitle: '海洋开放日',
-    heroSub: '面向所有来宾的场馆地图与参观指引',
-    loading: '地图加载中',
-    searchPlaceholder: '搜索编号、名称、楼层或大类',
-    searchLabel: '搜索点位',
-    noResults: '没有找到匹配点位',
-    mapHint: '地图上有标记的为活动点位，点击查看介绍',
-    categories: '篇章大类',
+    careShort: '关怀',
+    standardShort: '标准',
+    points: '点位',
+    mapHint: '拖动地图，点击编号查看详情',
+    directory: '点位目录',
     showAll: '显示全部',
     pointUnit: '个点位',
-    location: '位置',
-    close: '关闭',
+    noResults: '没有找到匹配点位',
+    listEmpty: '当前分类暂无点位',
+    locate: '在地图上定位',
+    org: '海洋科普开放日组委会',
+    credits: '开发：姜正 · 柴扉教授课题组',
+    qrCode: '二维码',
+    loadFailed: '地图数据加载失败，请刷新重试',
     language: 'Switch to English',
     careOn: '开启关怀版',
     careOff: '关闭关怀版',
-    loadFailed: '地图数据加载失败，请刷新重试',
-    listEmpty: '当前分类暂无点位',
+    fullscreen: '全屏查看地图',
+    exitFullscreen: '退出全屏',
   },
   en: {
     htmlLang: 'en',
     pageTitle: '2026 Marine Science Open Day · Venue Map',
     siteTitle: 'Marine Science Open Day',
     siteSubtitle: 'Venue map and visitor guide',
-    heroLead: 'Welcome to',
-    heroTitle: 'Marine Open Day',
-    heroSub: 'Venue maps and visitor guidance for all guests',
-    loading: 'Loading map',
-    searchPlaceholder: 'Search number, name, floor, or theme',
-    searchLabel: 'Search locations',
-    noResults: 'No matching locations',
-    mapHint: 'Marked locations are open-day stations. Tap one for details.',
-    categories: 'Themes',
+    careShort: 'Care',
+    standardShort: 'Std',
+    points: 'Points',
+    mapHint: 'Drag the map, then tap a number for details',
+    directory: 'Locations',
     showAll: 'Show all',
     pointUnit: 'locations',
-    location: 'Location',
-    close: 'Close',
+    noResults: 'No matching locations',
+    listEmpty: 'No locations in this theme',
+    locate: 'Locate on map',
+    org: 'Marine Science Open Day Committee',
+    credits: 'Developed by Jiang Zheng · Prof. Chai Fei Research Group',
+    qrCode: 'QR code',
+    loadFailed: 'Unable to load the map data. Please refresh and try again.',
     language: '切换至中文',
     careOn: 'Turn on accessibility mode',
     careOff: 'Turn off accessibility mode',
-    loadFailed: 'Unable to load the map data. Please refresh and try again.',
-    listEmpty: 'No locations in this theme',
+    fullscreen: 'View map fullscreen',
+    exitFullscreen: 'Exit fullscreen',
   },
 };
 
@@ -63,11 +65,32 @@ const state = {
   searchDismissed: false,
   searchResults: [],
   activePoint: null,
+  pendingFocusId: '',
+  pendingOpen: false,
+  fullscreen: false,
+};
+
+const mapState = {
+  naturalWidth: 0,
+  naturalHeight: 0,
+  baseWidth: 0,
+  baseHeight: 0,
+  zoom: 1,
+  panX: 0,
+  panY: 0,
+  pointers: new Map(),
+  dragStartX: 0,
+  dragStartY: 0,
+  dragPanX: 0,
+  dragPanY: 0,
+  pinchDistance: 0,
+  pinchZoom: 1,
+  dragged: false,
 };
 
 const elements = {
   html: document.documentElement,
-  hero: document.getElementById('hero'),
+  body: document.body,
   languageButton: document.getElementById('languageButton'),
   careButton: document.getElementById('careButton'),
   searchWrap: document.querySelector('.search-wrap'),
@@ -78,9 +101,21 @@ const elements = {
   buildingKicker: document.getElementById('buildingKicker'),
   buildingTitle: document.getElementById('buildingTitle'),
   pointCount: document.getElementById('pointCount'),
-  mapFrame: document.getElementById('mapFrame'),
+  mapViewport: document.getElementById('mapViewport'),
+  mapStage: document.getElementById('mapStage'),
   mapImage: document.getElementById('mapImage'),
   mapHotspots: document.getElementById('mapHotspots'),
+  mapStatus: document.getElementById('mapStatus'),
+  pointsToggle: document.getElementById('pointsToggle'),
+  zoomIn: document.getElementById('zoomIn'),
+  zoomOut: document.getElementById('zoomOut'),
+  zoomReset: document.getElementById('zoomReset'),
+  fullscreenButton: document.getElementById('fullscreenButton'),
+  drawerBackdrop: document.getElementById('drawerBackdrop'),
+  directoryPane: document.getElementById('directoryPane'),
+  drawerClose: document.getElementById('drawerClose'),
+  directoryTitle: document.getElementById('directoryTitle'),
+  directoryCount: document.getElementById('directoryCount'),
   categoryChips: document.getElementById('categoryChips'),
   clearFilter: document.getElementById('clearFilter'),
   pointList: document.getElementById('pointList'),
@@ -93,6 +128,7 @@ const elements = {
   spotAddress: document.getElementById('spotAddress'),
   spotIntro: document.getElementById('spotIntro'),
   spotItems: document.getElementById('spotItems'),
+  focusButton: document.getElementById('focusButton'),
   toast: document.getElementById('toast'),
 };
 
@@ -125,6 +161,16 @@ function normalize(value) {
     .replace(/[·•—–_/／:：,，.。'"“”‘’《》()（）[\]【】\-]/g, '');
 }
 
+function icon(name) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('class', 'icon');
+  svg.setAttribute('aria-hidden', 'true');
+  const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+  use.setAttribute('href', `#i-${name}`);
+  svg.append(use);
+  return svg;
+}
+
 function showToast(message) {
   elements.toast.textContent = message;
   elements.toast.classList.add('show');
@@ -140,31 +186,28 @@ function applyStaticLanguage() {
     const key = node.dataset.i18n;
     if (dict[key]) node.textContent = dict[key];
   });
-  elements.searchInput.placeholder = dict.searchPlaceholder;
-  elements.searchInput.setAttribute('aria-label', dict.searchLabel);
+  elements.searchInput.placeholder = state.locale === 'zh'
+    ? '搜索编号、名称、楼层或大类'
+    : 'Search number, name, floor, or theme';
+  elements.searchInput.setAttribute('aria-label', state.locale === 'zh' ? '搜索点位' : 'Search locations');
+  elements.clearSearch.setAttribute('aria-label', state.locale === 'zh' ? '清除搜索' : 'Clear search');
   elements.languageButton.textContent = state.locale === 'zh' ? 'EN' : '中';
-  elements.languageButton.setAttribute('aria-label', dict.language);
+  elements.languageButton.setAttribute('aria-label', t('language'));
+  elements.fullscreenButton.setAttribute('aria-label', state.fullscreen ? t('exitFullscreen') : t('fullscreen'));
   renderCareButton();
-  elements.clearFilter.textContent = dict.showAll;
+  elements.clearFilter.textContent = t('showAll');
 }
 
 function renderCareButton() {
-  const pressed = state.care;
-  elements.careButton.setAttribute('aria-pressed', String(pressed));
-  elements.careButton.setAttribute('aria-label', pressed ? t('careOff') : t('careOn'));
-  const chars = state.locale === 'zh'
-    ? (pressed ? ['标', '准', '版'] : ['关', '怀', '版'])
-    : (pressed ? ['S', 'T', 'D'] : ['C', 'A', 'R', 'E']);
-  elements.careButton.replaceChildren(...chars.map((char) => {
-    const span = document.createElement('span');
-    span.textContent = char;
-    return span;
-  }));
+  elements.careButton.setAttribute('aria-pressed', String(state.care));
+  elements.careButton.setAttribute('aria-label', state.care ? t('careOff') : t('careOn'));
+  const label = elements.careButton.querySelector('span');
+  if (label) label.textContent = state.care ? t('standardShort') : t('careShort');
 }
 
 function setCareMode(enabled) {
   state.care = !!enabled;
-  document.body.classList.toggle('care-mode', state.care);
+  elements.body.classList.toggle('care-mode', state.care);
   localStorage.setItem(STORAGE.care, state.care ? '1' : '0');
   renderCareButton();
 }
@@ -175,11 +218,10 @@ function setLocale(locale) {
   applyStaticLanguage();
   renderBuildingTabs();
   renderMap();
-  renderCategories();
-  renderPointList();
+  renderDirectory();
   updateSearchResults();
   if (elements.spotDialog.open && state.activePoint) {
-    openPoint(state.activePoint, { updateUrl: false, moveFocus: false });
+    fillPointDialog(state.activePoint, { updateUrl: false, moveFocus: false });
   }
   updateUrl({});
 }
@@ -189,9 +231,9 @@ function renderBuildingTabs() {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'building-tab';
-    button.role = 'tab';
     button.dataset.building = building.key;
     button.setAttribute('aria-selected', String(building.key === state.buildingKey));
+    button.setAttribute('role', 'tab');
     button.textContent = building.shortName[state.locale];
     button.addEventListener('click', () => selectBuilding(building.key));
     return button;
@@ -202,45 +244,39 @@ function selectBuilding(key, options = {}) {
   if (!state.data.buildings.some((building) => building.key === key)) return;
   state.buildingKey = key;
   state.category = -1;
+  state.pendingFocusId = options.focusPoint ? options.focusPoint.id : '';
+  state.pendingOpen = !!options.openPoint;
   renderBuildingTabs();
   renderMap();
-  renderCategories();
-  renderPointList();
-  updateUrl({ spot: options.spotId || '' });
+  renderDirectory();
+  updateUrl({ building: key, spot: options.openPoint ? options.focusPoint?.id || '' : '' });
 }
 
 function renderMap() {
   const building = currentBuilding();
-  const title = building.name[state.locale];
   elements.buildingKicker.textContent = building.name.en.toUpperCase();
-  elements.buildingTitle.textContent = title;
-  elements.pointCount.textContent = `${building.points.length} ${t('pointUnit')}`;
+  elements.buildingTitle.textContent = building.name[state.locale];
+  elements.pointCount.textContent = String(building.points.length);
   elements.mapImage.alt = state.locale === 'zh'
-    ? `${title}开放日点位地图`
-    : `${title} open-day station map`;
-  elements.mapFrame.classList.remove('is-ready');
-  const expectedSrc = building.image[state.locale];
+    ? `${building.name.zh}开放日点位地图`
+    : `${building.name.en} open-day location map`;
+  renderHotspots();
+
+  const src = building.image[state.locale];
   const finish = () => {
-    if (elements.mapImage.getAttribute('src') === expectedSrc) {
-      elements.mapFrame.classList.add('is-ready');
-    }
+    if (elements.mapImage.getAttribute('src') !== src) return;
+    setupMapStage();
+    handlePendingFocus();
   };
   elements.mapImage.onload = finish;
-  elements.mapImage.onerror = () => {
-    elements.mapFrame.classList.remove('is-ready');
-    showToast(t('loadFailed'));
-  };
-  elements.mapImage.src = expectedSrc;
-  if (elements.mapImage.complete && elements.mapImage.naturalWidth) {
-    requestAnimationFrame(finish);
-  }
-  renderHotspots();
+  elements.mapImage.onerror = () => showToast(t('loadFailed'));
+  elements.mapImage.src = src;
+  if (elements.mapImage.complete && elements.mapImage.naturalWidth) requestAnimationFrame(finish);
 }
 
 function renderHotspots() {
   const building = currentBuilding();
-  const filtering = state.category >= 0;
-  elements.mapFrame.classList.toggle('is-filtering', filtering);
+  elements.mapViewport.classList.toggle('is-filtering', state.category >= 0);
   elements.mapHotspots.replaceChildren(...building.points.map((point) => {
     const button = document.createElement('button');
     button.type = 'button';
@@ -252,25 +288,30 @@ function renderHotspots() {
     button.style.setProperty('--spot-text', point.textColor);
     button.dataset.pointId = point.id;
     button.setAttribute('aria-label', `${point.no || point.id} ${point.name[state.locale]}`);
-    button.title = `${point.no || point.id} · ${point.name[state.locale]}`;
     const number = document.createElement('span');
     number.className = 'hotspot-number';
     number.textContent = point.no || '•';
     button.append(number);
-    button.addEventListener('click', () => openPoint(point));
+    button.addEventListener('pointerdown', (event) => event.stopPropagation());
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
+      centerPoint(point, Math.max(mapState.zoom, 2));
+      fillPointDialog(point);
+    });
     return button;
   }));
 }
 
-function renderCategories() {
+function renderDirectory() {
   const building = currentBuilding();
+  const points = building.points.filter((point) => state.category < 0 || point.category === state.category);
+  elements.directoryCount.textContent = `${points.length} ${t('pointUnit')}`;
   elements.clearFilter.hidden = state.category < 0;
   elements.categoryChips.replaceChildren(...building.categories.map((categoryIndex) => {
     const category = currentCategory(categoryIndex);
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'category-chip';
-    button.dataset.category = String(categoryIndex);
     button.setAttribute('aria-pressed', String(state.category === categoryIndex));
     const dot = document.createElement('span');
     dot.className = 'category-dot';
@@ -280,17 +321,13 @@ function renderCategories() {
     button.append(dot, label);
     button.addEventListener('click', () => {
       state.category = state.category === categoryIndex ? -1 : categoryIndex;
-      renderCategories();
       renderHotspots();
-      renderPointList();
+      renderDirectory();
+      if (state.category >= 0) resetMapView();
     });
     return button;
   }));
-}
 
-function renderPointList() {
-  const building = currentBuilding();
-  const points = building.points.filter((point) => state.category < 0 || point.category === state.category);
   if (!points.length) {
     const empty = document.createElement('div');
     empty.className = 'list-empty';
@@ -298,6 +335,7 @@ function renderPointList() {
     elements.pointList.replaceChildren(empty);
     return;
   }
+
   elements.pointList.replaceChildren(...points.map((point) => {
     const button = document.createElement('button');
     button.type = 'button';
@@ -318,23 +356,85 @@ function renderPointList() {
     const meta = document.createElement('span');
     meta.className = 'point-row-meta';
     const category = currentCategory(point.category);
-    meta.textContent = [
-      point.floor[state.locale],
-      category ? category[state.locale] : '',
-    ].filter(Boolean).join(' · ');
+    meta.textContent = [point.floor[state.locale], category ? category[state.locale] : ''].filter(Boolean).join(' · ');
     main.append(name, meta);
 
-    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    icon.setAttribute('class', 'icon');
-    icon.setAttribute('aria-hidden', 'true');
-    const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-    use.setAttribute('href', '#i-chevron');
-    icon.append(use);
-
-    button.append(badge, main, icon);
-    button.addEventListener('click', () => openPoint(point));
+    button.append(badge, main, icon('chevron'));
+    button.addEventListener('click', () => {
+      closeDrawer();
+      centerPoint(point, 2.2);
+      fillPointDialog(point);
+    });
     return button;
   }));
+}
+
+function setupMapStage() {
+  const viewport = elements.mapViewport.getBoundingClientRect();
+  const width = elements.mapImage.naturalWidth;
+  const height = elements.mapImage.naturalHeight;
+  if (!width || !height || !viewport.width || !viewport.height) return;
+  mapState.naturalWidth = width;
+  mapState.naturalHeight = height;
+  const scale = Math.min(viewport.width / width, viewport.height / height) * 0.98;
+  mapState.baseWidth = width * scale;
+  mapState.baseHeight = height * scale;
+  elements.mapStage.style.width = `${mapState.baseWidth}px`;
+  elements.mapStage.style.height = `${mapState.baseHeight}px`;
+  resetMapView();
+}
+
+function resetMapView() {
+  mapState.zoom = 1;
+  mapState.panX = 0;
+  mapState.panY = 0;
+  applyMapTransform();
+}
+
+function clampPan() {
+  const viewport = elements.mapViewport.getBoundingClientRect();
+  const maxX = Math.max(0, (mapState.baseWidth * mapState.zoom - viewport.width) / 2);
+  const maxY = Math.max(0, (mapState.baseHeight * mapState.zoom - viewport.height) / 2);
+  mapState.panX = Math.max(-maxX, Math.min(maxX, mapState.panX));
+  mapState.panY = Math.max(-maxY, Math.min(maxY, mapState.panY));
+}
+
+function applyMapTransform() {
+  const viewport = elements.mapViewport.getBoundingClientRect();
+  clampPan();
+  elements.mapStage.style.left = `${(viewport.width - mapState.baseWidth) / 2 + mapState.panX}px`;
+  elements.mapStage.style.top = `${(viewport.height - mapState.baseHeight) / 2 + mapState.panY}px`;
+  elements.mapStage.style.transform = `scale(${mapState.zoom})`;
+  elements.mapStage.style.setProperty('--hotspot-inverse', String(1 / mapState.zoom));
+}
+
+function setZoom(value) {
+  mapState.zoom = Math.max(1, Math.min(4.5, Number(value) || 1));
+  applyMapTransform();
+}
+
+function centerPoint(point, zoom = 2.2) {
+  if (!mapState.baseWidth || !mapState.baseHeight) {
+    state.pendingFocusId = point.id;
+    return;
+  }
+  mapState.zoom = Math.max(1, Math.min(4.5, zoom));
+  const offsetX = (point.x / 100 - 0.5) * mapState.baseWidth;
+  const offsetY = (point.y / 100 - 0.5) * mapState.baseHeight;
+  mapState.panX = -offsetX * mapState.zoom;
+  mapState.panY = -offsetY * mapState.zoom;
+  applyMapTransform();
+}
+
+function handlePendingFocus() {
+  if (!state.pendingFocusId) return;
+  const point = currentBuilding().points.find((item) => item.id === state.pendingFocusId);
+  const shouldOpen = state.pendingOpen;
+  state.pendingFocusId = '';
+  state.pendingOpen = false;
+  if (!point) return;
+  centerPoint(point, 2.2);
+  if (shouldOpen) fillPointDialog(point, { updateUrl: true, moveFocus: true });
 }
 
 function allSearchRows() {
@@ -409,18 +509,15 @@ function updateSearchResults(forceOpen = false) {
       ].filter(Boolean).join(' · ');
       main.append(name, meta);
 
-      const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      icon.setAttribute('class', 'icon');
-      icon.setAttribute('aria-hidden', 'true');
-      const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-      use.setAttribute('href', '#i-chevron');
-      icon.append(use);
-
-      button.append(number, main, icon);
+      button.append(number, main, icon('chevron'));
       button.addEventListener('click', () => {
-        if (building.key !== state.buildingKey) selectBuilding(building.key, { spotId: point.id });
         closeSearch();
-        openPoint(point);
+        if (building.key !== state.buildingKey) {
+          selectBuilding(building.key, { focusPoint: point, openPoint: true });
+        } else {
+          centerPoint(point, 2.2);
+          fillPointDialog(point);
+        }
       });
       return button;
     }));
@@ -433,7 +530,7 @@ function closeSearch() {
   elements.searchResults.hidden = true;
 }
 
-function openPoint(point, options = {}) {
+function fillPointDialog(point, options = {}) {
   if (!point) return;
   const building = state.data.buildings.find((item) => item.points.some((row) => row.id === point.id)) || currentBuilding();
   state.activePoint = point;
@@ -450,7 +547,7 @@ function openPoint(point, options = {}) {
   elements.spotTitle.textContent = name;
   elements.spotFull.textContent = point.full[state.locale] === name ? '' : point.full[state.locale];
   elements.spotFull.hidden = !elements.spotFull.textContent;
-  elements.spotAddress.textContent = point.space[state.locale] ? `${t('location')} · ${point.space[state.locale]}` : '';
+  elements.spotAddress.textContent = point.space[state.locale] ? `${point.space[state.locale]}` : '';
   elements.spotAddress.hidden = !elements.spotAddress.textContent;
   elements.spotIntro.textContent = point.intro[state.locale];
   elements.spotIntro.hidden = !elements.spotIntro.textContent;
@@ -482,14 +579,24 @@ function openPoint(point, options = {}) {
   }
 }
 
-function closePoint() {
+function closeDialog(options = {}) {
   state.activePoint = null;
   if (typeof elements.spotDialog.close === 'function' && elements.spotDialog.open) {
     elements.spotDialog.close();
   } else {
     elements.spotDialog.removeAttribute('open');
   }
-  updateUrl({ spot: '' });
+  if (options.clearUrl !== false) updateUrl({ spot: '' });
+}
+
+function openDrawer() {
+  elements.body.classList.add('drawer-open');
+  elements.pointsToggle.setAttribute('aria-expanded', 'true');
+}
+
+function closeDrawer() {
+  elements.body.classList.remove('drawer-open');
+  elements.pointsToggle.setAttribute('aria-expanded', 'false');
 }
 
 function updateUrl(options = {}) {
@@ -514,16 +621,91 @@ function readUrlState() {
   state.buildingKey = state.data.buildings.some((building) => building.key === requestedBuilding)
     ? requestedBuilding
     : state.data.buildings[0].key;
-  return params.get('spot');
+  const spotId = params.get('spot') || '';
+  if (spotId) {
+    state.pendingFocusId = spotId;
+    state.pendingOpen = true;
+  }
+}
+
+function toggleFullscreen() {
+  state.fullscreen = !state.fullscreen;
+  elements.mapViewport.classList.toggle('is-fullscreen', state.fullscreen);
+  elements.body.classList.toggle('map-fullscreen', state.fullscreen);
+  elements.fullscreenButton.setAttribute('aria-label', state.fullscreen ? t('exitFullscreen') : t('fullscreen'));
+  requestAnimationFrame(() => {
+    setupMapStage();
+    if (state.activePoint) centerPoint(state.activePoint, Math.max(2, mapState.zoom));
+  });
+}
+
+function attachMapGestures() {
+  elements.mapViewport.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    const factor = event.deltaY < 0 ? 1.12 : 0.89;
+    setZoom(mapState.zoom * factor);
+  }, { passive: false });
+
+  elements.mapViewport.addEventListener('pointerdown', (event) => {
+    if (event.target.closest('.zoom-controls, .points-toggle, .map-title-chip, .map-status')) return;
+    if (event.button !== undefined && event.button !== 0) return;
+    mapState.pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    elements.mapViewport.setPointerCapture(event.pointerId);
+    mapState.dragged = false;
+    if (mapState.pointers.size === 1) {
+      mapState.dragStartX = event.clientX;
+      mapState.dragStartY = event.clientY;
+      mapState.dragPanX = mapState.panX;
+      mapState.dragPanY = mapState.panY;
+    } else if (mapState.pointers.size === 2) {
+      const [a, b] = Array.from(mapState.pointers.values());
+      mapState.pinchDistance = Math.hypot(a.x - b.x, a.y - b.y);
+      mapState.pinchZoom = mapState.zoom;
+    }
+  });
+
+  elements.mapViewport.addEventListener('pointermove', (event) => {
+    if (!mapState.pointers.has(event.pointerId)) return;
+    mapState.pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (mapState.pointers.size >= 2) {
+      const [a, b] = Array.from(mapState.pointers.values());
+      const distance = Math.hypot(a.x - b.x, a.y - b.y);
+      if (mapState.pinchDistance > 0) setZoom(mapState.pinchZoom * distance / mapState.pinchDistance);
+      mapState.dragged = true;
+      return;
+    }
+    const dx = event.clientX - mapState.dragStartX;
+    const dy = event.clientY - mapState.dragStartY;
+    if (Math.abs(dx) + Math.abs(dy) > 3) mapState.dragged = true;
+    mapState.panX = mapState.dragPanX + dx;
+    mapState.panY = mapState.dragPanY + dy;
+    applyMapTransform();
+  });
+
+  const finishPointer = (event) => {
+    mapState.pointers.delete(event.pointerId);
+    if (elements.mapViewport.hasPointerCapture(event.pointerId)) {
+      elements.mapViewport.releasePointerCapture(event.pointerId);
+    }
+    if (mapState.pointers.size === 1) {
+      const point = Array.from(mapState.pointers.values())[0];
+      mapState.dragStartX = point.x;
+      mapState.dragStartY = point.y;
+      mapState.dragPanX = mapState.panX;
+      mapState.dragPanY = mapState.panY;
+    }
+  };
+  elements.mapViewport.addEventListener('pointerup', finishPointer);
+  elements.mapViewport.addEventListener('pointercancel', finishPointer);
+
+  elements.mapViewport.addEventListener('dblclick', () => {
+    setZoom(mapState.zoom > 1.2 ? 1 : 2);
+  });
 }
 
 function attachEvents() {
-  elements.languageButton.addEventListener('click', () => {
-    setLocale(state.locale === 'zh' ? 'en' : 'zh');
-  });
-  elements.careButton.addEventListener('click', () => {
-    setCareMode(!state.care);
-  });
+  elements.languageButton.addEventListener('click', () => setLocale(state.locale === 'zh' ? 'en' : 'zh'));
+  elements.careButton.addEventListener('click', () => setCareMode(!state.care));
   elements.searchInput.addEventListener('input', () => updateSearchResults(true));
   elements.searchInput.addEventListener('focus', () => updateSearchResults(true));
   elements.searchInput.addEventListener('keydown', (event) => {
@@ -540,48 +722,56 @@ function attachEvents() {
   document.addEventListener('click', (event) => {
     if (!elements.searchWrap.contains(event.target)) closeSearch();
   });
+  elements.pointsToggle.addEventListener('click', openDrawer);
+  elements.drawerClose.addEventListener('click', closeDrawer);
+  elements.drawerBackdrop.addEventListener('click', closeDrawer);
   elements.clearFilter.addEventListener('click', () => {
     state.category = -1;
-    renderCategories();
     renderHotspots();
-    renderPointList();
+    renderDirectory();
   });
-  elements.dialogClose.addEventListener('click', closePoint);
+  elements.zoomIn.addEventListener('click', () => setZoom(mapState.zoom * 1.25));
+  elements.zoomOut.addEventListener('click', () => setZoom(mapState.zoom / 1.25));
+  elements.zoomReset.addEventListener('click', resetMapView);
+  elements.fullscreenButton.addEventListener('click', toggleFullscreen);
+  elements.dialogClose.addEventListener('click', () => closeDialog());
   elements.spotDialog.addEventListener('cancel', (event) => {
     event.preventDefault();
-    closePoint();
+    closeDialog();
   });
   elements.spotDialog.addEventListener('click', (event) => {
-    if (event.target === elements.spotDialog) closePoint();
+    if (event.target === elements.spotDialog) closeDialog();
   });
-  window.addEventListener('scroll', () => {
-    elements.hero.classList.toggle('is-away', window.scrollY > 90);
-  }, { passive: true });
+  elements.focusButton.addEventListener('click', () => {
+    const point = state.activePoint;
+    if (!point) return;
+    closeDialog({ clearUrl: false });
+    closeDrawer();
+    requestAnimationFrame(() => centerPoint(point, 2.5));
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && state.fullscreen) toggleFullscreen();
+  });
+  window.addEventListener('resize', () => requestAnimationFrame(setupMapStage));
+  attachMapGestures();
 }
 
 async function init() {
-  document.body.classList.toggle('care-mode', state.care);
+  elements.body.classList.toggle('care-mode', state.care);
   attachEvents();
   try {
     const response = await fetch('data/map.json', { cache: 'no-cache' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
-    const requestedSpot = readUrlState();
+    readUrlState();
     applyStaticLanguage();
     renderBuildingTabs();
+    renderDirectory();
     renderMap();
-    renderCategories();
-    renderPointList();
-    elements.hero.classList.toggle('is-away', window.scrollY > 90);
-    if (requestedSpot) {
-      const point = currentBuilding().points.find((item) => item.id === requestedSpot);
-      if (point) openPoint(point, { updateUrl: false });
-    }
   } catch (error) {
     console.error(error);
-    elements.mapFrame.classList.remove('is-ready');
-    document.querySelector('#mapLoading p').textContent = t('loadFailed');
     showToast(t('loadFailed'));
+    elements.mapStatus.lastElementChild.textContent = t('loadFailed');
   }
 }
 
