@@ -2,6 +2,8 @@
 
 从小程序公众导览中独立出的静态网页版，可直接部署到 GitHub Pages。页面包含：
 
+- 在线地图：<https://brian-jiangz.github.io/marine-open-day-map/>
+- GitHub 仓库：<https://github.com/Brian-jiangz/marine-open-day-map>
 - 周隆泉楼、希平楼、金泉楼三栋场馆地图
 - 101 个可点击点位及分组点位详情
 - 编号、名称、楼层、篇章大类搜索
@@ -50,6 +52,8 @@ QR_URL=https://example.com/path/ npm run build:qr
 ```
 
 输出 `qr-code.png` 和 `qr-code.svg`，可在 [qr.html](qr.html) 中直接展示。
+
+![地图二维码](qr-code.png)
 
 ## 验证
 
