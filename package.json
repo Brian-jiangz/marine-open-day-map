@@ -1,0 +1,17 @@
+{
+  "name": "marine-open-day-map",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone GitHub Pages map for the 2026 Marine Science Open Day",
+  "scripts": {
+    "build": "npm run build:data && npm run build:qr",
+    "build:data": "node scripts/build-data.js",
+    "build:qr": "node scripts/generate-qr.js",
+    "serve": "node scripts/serve.js",
+    "test:e2e": "node scripts/e2e.js"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.65.0",
+    "qrcode": "^1.5.4"
+  }
+}

@@ -1,0 +1,3276 @@
+{
+  "generatedAt": "2026-11-10T10:28:43.476Z",
+  "eventDate": "2026-11-14",
+  "title": {
+    "zh": "海洋科学开放日",
+    "en": "Marine Science Open Day"
+  },
+  "categories": [
+    {
+      "index": 0,
+      "zh": "深海观测",
+      "en": "Ocean Observation"
+    },
+    {
+      "index": 1,
+      "zh": "海洋生物",
+      "en": "Marine Life"
+    },
+    {
+      "index": 2,
+      "zh": "化学元素",
+      "en": "Chemical Elements"
+    },
+    {
+      "index": 3,
+      "zh": "海洋与气候",
+      "en": "Ocean & Climate"
+    },
+    {
+      "index": 4,
+      "zh": "成果转化",
+      "en": "Research Translation"
+    },
+    {
+      "index": 5,
+      "zh": "生态环境保护",
+      "en": "Ecosystem Conservation"
+    },
+    {
+      "index": 6,
+      "zh": "青少年科技创新",
+      "en": "Youth STEM"
+    },
+    {
+      "index": 7,
+      "zh": "影像空间",
+      "en": "Film Space"
+    },
+    {
+      "index": 8,
+      "zh": "科学家讲座",
+      "en": "Scientist Talks"
+    },
+    {
+      "index": 9,
+      "zh": "邮局",
+      "en": "Ocean Post Office"
+    },
+    {
+      "index": 10,
+      "zh": "游戏",
+      "en": "Games"
+    },
+    {
+      "index": 11,
+      "zh": "实验课堂",
+      "en": "Lab Workshops"
+    },
+    {
+      "index": 12,
+      "zh": "其他",
+      "en": "Other"
+    }
+  ],
+  "buildings": [
+    {
+      "key": "zlq",
+      "name": {
+        "zh": "周隆泉楼",
+        "en": "Zhou Longquan Building"
+      },
+      "shortName": {
+        "zh": "周隆泉",
+        "en": "Zhou Longquan"
+      },
+      "image": {
+        "zh": "assets/map/ov_zlq.jpg",
+        "en": "assets/map/ov_zlq_en.jpg"
+      },
+      "floors": [
+        {
+          "zh": "五楼",
+          "en": "5F"
+        },
+        {
+          "zh": "四楼",
+          "en": "4F"
+        },
+        {
+          "zh": "三楼",
+          "en": "3F"
+        },
+        {
+          "zh": "二楼",
+          "en": "2F"
+        },
+        {
+          "zh": "一楼",
+          "en": "1F"
+        }
+      ],
+      "categories": [
+        0,
+        1,
+        2,
+        9
+      ],
+      "points": [
+        {
+          "id": "42",
+          "no": "42",
+          "category": 2,
+          "name": {
+            "zh": "【开放实验室】铁元素与氮循环",
+            "en": "Iron and Nitrogen Cycling Lab"
+          },
+          "full": {
+            "zh": "【开放实验室】海洋生态生理学与生物地球化学实验室",
+            "en": "Open Lab: Marine Ecophysiology and Biogeochemistry"
+          },
+          "intro": {
+            "zh": "亲眼见证海水“变酸”的魔法，理解海洋酸化成因，以及对于钙质外壳生物乃至整个生态链的破坏。",
+            "en": "Witness seawater becoming more acidic, learn what drives ocean acidification, and examine its effects on shell-forming organisms and entire food webs."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "五楼",
+            "en": "5F"
+          },
+          "x": 49.4,
+          "y": 9.8,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "31",
+          "no": "31",
+          "category": 2,
+          "name": {
+            "zh": "【主题展览】化学元素家族",
+            "en": "The Periodic Table in the Ocean"
+          },
+          "full": {
+            "zh": "【主题展览】从微观元素到浩瀚深蓝",
+            "en": "From Microscopic Elements to the Vast Blue Ocean"
+          },
+          "intro": {
+            "zh": "把元素周期表里的符号带入真实的海洋系统中，从元素出发，进入海洋生命、物质循环、气候变化、深海资源和前沿科技共同构成的蓝色世界。",
+            "en": "Follow chemical elements from the periodic table into the ocean system and explore how they connect marine life, biogeochemical cycles, climate, deep-sea resources, and new technology."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 22.7,
+          "y": 16.5,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "32",
+          "no": "32",
+          "category": 2,
+          "name": {
+            "zh": "氮营养盐",
+            "en": "Nitrogen Nutrients"
+          },
+          "full": {
+            "zh": "谁往海里捣“氮”？",
+            "en": "Who Is Adding Nitrogen to the Sea?"
+          },
+          "intro": {
+            "zh": "认识沉积物与水柱、滨海湿地等关键区域的水质净化作用，理解河海连续体作为氮污染入海“关键枢纽”和“天然屏障”的双重功能。",
+            "en": "Discover how sediments, the water column, and coastal wetlands remove pollutants, and how the river-ocean continuum acts as both a gateway and a natural barrier for nitrogen pollution."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 21,
+          "y": 23.2,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "33",
+          "no": "33",
+          "category": 2,
+          "name": {
+            "zh": "【开放实验室】营养盐实验室",
+            "en": "Nutrient Analysis Lab"
+          },
+          "full": {
+            "zh": "【开放实验室】营养盐分析实验室",
+            "en": "Open Lab: Nutrient Analysis Laboratory"
+          },
+          "intro": {
+            "zh": "认识氮磷硅营养盐的存在形式以及科学检测方法，感受科学家如何追踪海洋中的微量营养元素。",
+            "en": "Learn how nitrogen, phosphorus, and silicon nutrients occur in seawater and how scientists measure trace nutrients in the ocean."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 10.6,
+          "y": 17.6,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "34",
+          "no": "34",
+          "category": 2,
+          "name": {
+            "zh": "微塑料示踪",
+            "en": "Tracing Microplastics"
+          },
+          "full": {
+            "zh": "“碳”觅“塑”源",
+            "en": "Tracking Carbon and Plastic Sources"
+          },
+          "intro": {
+            "zh": "观察和了解日常生活中常见塑料制品及其材料特性，动手实验探索塑料在自然环境中的老化与浸出过程，理解塑料对海洋的潜在影响。",
+            "en": "Examine everyday plastics and their material properties, test how plastics age and release chemicals in the environment, and consider their impact on the ocean."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 33.9,
+          "y": 18.8,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "35",
+          "no": "35",
+          "category": 2,
+          "name": {
+            "zh": "碳元素循环",
+            "en": "The Carbon Cycle"
+          },
+          "full": {
+            "zh": "蓝海碳科学探索屋",
+            "en": "Blue Ocean Carbon Science Discovery Room"
+          },
+          "intro": {
+            "zh": "亲手体验化学能转化为电能的全过程，直观观察二氧化碳对海洋带来的改变，了解利用电能生成碱性物质缓解海洋酸化、助力海洋固碳的科学原理。",
+            "en": "Convert chemical energy into electricity, observe how carbon dioxide changes seawater, and learn how electrochemical alkalinity generation could mitigate ocean acidification and enhance carbon storage."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 42.2,
+          "y": 19,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "36",
+          "no": "36",
+          "category": 2,
+          "name": {
+            "zh": "海洋颗粒物",
+            "en": "Marine Particles"
+          },
+          "full": {
+            "zh": "沧海一粟——神奇的海洋颗粒物",
+            "en": "A Drop in the Ocean: The Remarkable World of Marine Particles"
+          },
+          "intro": {
+            "zh": "真空泵过滤“模拟海水”，研磨沉积物样本，直观演示悬浮颗粒物如何驱动海洋碳循环，沉积物层序如何记录地球气候变迁史。",
+            "en": "Filter simulated seawater, grind sediment samples, and see how suspended particles drive the ocean carbon cycle and how sediment layers record Earth’s climate history."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 46.8,
+          "y": 17.6,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "37",
+          "no": "37",
+          "category": 2,
+          "name": {
+            "zh": "【开放实验室】有机化学",
+            "en": "Organic Chemistry Lab"
+          },
+          "full": {
+            "zh": "【开放实验室】海洋的“食物分析厂”",
+            "en": "Open Lab: The Ocean’s “Food Analysis Factory”"
+          },
+          "intro": {
+            "zh": "从溶解有机碳分析仪与液相色谱仪看海洋有机碳与氨基酸含量，从分子层面了解海洋中的物质循环。",
+            "en": "See how dissolved organic carbon analyzers and liquid chromatography reveal organic carbon and amino acids in seawater, linking molecular chemistry to ocean material cycles."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 52,
+          "y": 18.8,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "38",
+          "no": "38",
+          "category": 2,
+          "name": {
+            "zh": "溶解氧",
+            "en": "Dissolved Oxygen"
+          },
+          "full": {
+            "zh": "“喘不上气”的海洋",
+            "en": "An Ocean Out of Breath"
+          },
+          "intro": {
+            "zh": "动手测定溶解氧，证明海洋中氧气的存在和来源，深刻意识面对气候变化的海洋缺氧现状和人类行动。",
+            "en": "Measure dissolved oxygen, investigate where oxygen in the ocean comes from, and explore the growing problem of ocean deoxygenation under climate change."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 67.5,
+          "y": 18.8,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "39",
+          "no": "39",
+          "category": 2,
+          "name": {
+            "zh": "氮元素循环",
+            "en": "The Nitrogen Cycle"
+          },
+          "full": {
+            "zh": "氮的奇妙海洋之旅——小小海洋科学家探险行动",
+            "en": "The Amazing Journey of Nitrogen: A Young Ocean Scientist’s Adventure"
+          },
+          "intro": {
+            "zh": "参与硝酸盐检测实验，了解海洋氮循环过程，理解海洋环境保护的重要性",
+            "en": "Take part in a nitrate test, learn how the marine nitrogen cycle works, and understand why protecting the ocean matters."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 59.8,
+          "y": 27.7,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "40",
+          "no": "40",
+          "category": 2,
+          "name": {
+            "zh": "【开放实验室】微塑料处理",
+            "en": "Microplastic Processing Lab"
+          },
+          "full": {
+            "zh": "【开放实验室】微塑料的前处理之旅：从海洋垃圾到实验室分析",
+            "en": "Open Lab: From Ocean Plastic to Microplastic Analysis"
+          },
+          "intro": {
+            "zh": "演示微塑料过滤实验，观摩雨生红球藻产虾青素过程，理解海洋污染治理与生物资源开发的前沿技术。",
+            "en": "Watch microplastic filtration demonstrations, observe astaxanthin production by Haematococcus algae, and discover new approaches to pollution control and marine biotechnology."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 67.5,
+          "y": 24.3,
+          "color": "#9C5AE7",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "41",
+          "no": "41",
+          "category": 9,
+          "name": {
+            "zh": "海的邮局",
+            "en": "Ocean Post Office"
+          },
+          "full": {
+            "zh": "海的邮局",
+            "en": "Ocean Post Office"
+          },
+          "intro": {
+            "zh": "江海万里，纸短情长。亲笔为海洋写一封情书，或者留下你对于海洋的疑问/开放日的活动反馈，就有机会收到来自科学家/组委会的回答！",
+            "en": "Write a letter to the ocean or leave a question or event feedback. Selected messages will receive replies from scientists or the organizing committee."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 57.2,
+          "y": 18.8,
+          "color": "#286B91",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "22",
+          "no": "22",
+          "category": 1,
+          "name": {
+            "zh": "水族造景",
+            "en": "Aquascaping"
+          },
+          "full": {
+            "zh": "缸里有片“水世界”",
+            "en": "A Water World in a Tank"
+          },
+          "intro": {
+            "zh": "水族造景的灵感来自真实海洋与淡水生态系统。造景不仅是个人审美表达，也涉及物种来源、栖息地保护、人工繁育和人类干预边界。",
+            "en": "Aquascaping draws inspiration from real marine and freshwater ecosystems. It also raises important questions about species sourcing, habitat protection, captive breeding, and the limits of human intervention."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 36.5,
+          "y": 44.4,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "23–26",
+          "no": "23–26",
+          "category": 1,
+          "name": {
+            "zh": "ONCE 海洋负排放专区",
+            "en": "ONCE Ocean Negative Emissions Zone"
+          },
+          "full": {
+            "zh": "（ONCE专区）微藻——神奇的绿色财富",
+            "en": "ONCE Zone: Microalgae, the Ocean’s Green Wealth"
+          },
+          "intro": {
+            "zh": "小小微藻改良传统化肥减少陆源污染，化身藻粉、藻片、藻蓝蛋白等高价值产品，完成科技成果有效转化。",
+            "en": "See how microalgae can reduce nutrient pollution from conventional fertilizers and become high-value products such as algal powder, tablets, and phycocyanin."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 44.3,
+          "y": 38.8,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": [
+            {
+              "no": "23",
+              "name": {
+                "zh": "海洋负排放国际大科学计划专区",
+                "en": "ONCE International Science Program Zone"
+              },
+              "intro": {
+                "zh": "小小微藻改良传统化肥减少陆源污染，化身藻粉、藻片、藻蓝蛋白等高价值产品，完成科技成果有效转化。",
+                "en": "See how microalgae can reduce nutrient pollution from conventional fertilizers and become high-value products such as algal powder, tablets, and phycocyanin."
+              }
+            },
+            {
+              "no": "24",
+              "name": {
+                "zh": "海洋负排放技术路径",
+                "en": "Ocean Negative Emissions Pathways"
+              },
+              "intro": {
+                "zh": "认识从陆海统筹、人工干预海水养殖区到污水处理-海洋碱化、“四泵集成”生态工程的海洋负排放技术路径。",
+                "en": "Explore pathways ranging from integrated land-sea management and managed aquaculture to wastewater alkalinity enhancement and the four-pump ecological engineering approach."
+              }
+            },
+            {
+              "no": "25",
+              "name": {
+                "zh": "污水碱化与美丽海洋世界",
+                "en": "Wastewater Alkalinity Enhancement"
+              },
+              "intro": {
+                "zh": "动态模拟碱性物质如何改变水体的酸碱环境，探究污水碱化和海洋酸化的关联。",
+                "en": "Simulate how alkaline materials change the chemistry of water and explore how wastewater alkalinity enhancement connects to ocean acidification."
+              }
+            },
+            {
+              "no": "26",
+              "name": {
+                "zh": "海洋碳秘",
+                "en": "Ocean Carbon Mysteries"
+              },
+              "intro": {
+                "zh": "化身“碳原子”，从大气到深海触发不同碳泵事件，完成二氧化碳的深海封存。",
+                "en": "Become a carbon atom and trigger different carbon-pump processes on the journey from the atmosphere to the deep ocean."
+              }
+            }
+          ]
+        },
+        {
+          "id": "27",
+          "no": "27",
+          "category": 1,
+          "name": {
+            "zh": "海洋微生物奇遇记",
+            "en": "Adventures with Marine Microbes"
+          },
+          "full": {
+            "zh": "微力无穷——海洋微生物奇遇记",
+            "en": "The Mighty World of Marine Microbes"
+          },
+          "intro": {
+            "zh": "引导参与者认识海洋微生物多样的形态与功能，初步了解微生物与海洋环境、能量转化及气候的联系。",
+            "en": "Discover the diverse forms and functions of marine microorganisms and their connections to ocean chemistry, energy flow, and climate."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 64.9,
+          "y": 44.4,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "28",
+          "no": "28",
+          "category": 1,
+          "name": {
+            "zh": "海洋浮游生物探秘",
+            "en": "Exploring Marine Plankton"
+          },
+          "full": {
+            "zh": "微观世界——海洋浮游生物探秘",
+            "en": "The Microscopic World: Exploring Marine Plankton"
+          },
+          "intro": {
+            "zh": "亲手操作显微镜，洞见浮游生物活体与标本的奇妙形态。",
+            "en": "Use a microscope to observe the remarkable forms of living and preserved plankton."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 67.5,
+          "y": 38.8,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "29",
+          "no": "29",
+          "category": 1,
+          "name": {
+            "zh": "微型生物的王国",
+            "en": "Kingdom of Microorganisms"
+          },
+          "full": {
+            "zh": "微型生物的巨大王国",
+            "en": "The Great Kingdom of Marine Microorganisms"
+          },
+          "intro": {
+            "zh": "展示菌藻培养物视频与海报，揭示海洋微型生物驱动元素循环、影响全球气候的隐秘力量。",
+            "en": "Explore how microscopic marine organisms drive nutrient cycles and influence the global climate through cultures, videos, and scientific posters."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 57.2,
+          "y": 38.8,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "30",
+          "no": "30",
+          "category": 1,
+          "name": {
+            "zh": "原生生物科普",
+            "en": "Protists Up Close"
+          },
+          "full": {
+            "zh": "微观世界探秘——原生生物科普体验",
+            "en": "The Microscopic World: A Hands-On Look at Protists"
+          },
+          "intro": {
+            "zh": "理解单细胞生物纤毛虫的运动与摄食方式，理解其作为生态系统初级生产者/分解者对于环境监测和疾病防治的重要意义。",
+            "en": "Observe how single-celled ciliates move and feed, and learn why these producers and decomposers matter for environmental monitoring and disease control."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 33.9,
+          "y": 38.8,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "13",
+          "no": "13",
+          "category": 1,
+          "name": {
+            "zh": "大型海藻",
+            "en": "Macroalgae"
+          },
+          "full": {
+            "zh": "多姿多彩的大型海藻",
+            "en": "The Remarkable Diversity of Macroalgae"
+          },
+          "intro": {
+            "zh": "展示红绿褐藻标本、海藻养殖视频，品尝海藻相关零食，多感官认识大型海藻的多样形态与实际应用。",
+            "en": "Examine red, green, and brown algal specimens, watch seaweed cultivation footage, and try seaweed-based snacks while discovering the many forms and uses of macroalgae."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 41.7,
+          "y": 67.3,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "14",
+          "no": "14",
+          "category": 1,
+          "name": {
+            "zh": "底栖生物与海洋科考",
+            "en": "Benthic Life and Ocean Research"
+          },
+          "full": {
+            "zh": "海洋底栖生物多样性",
+            "en": "Marine Benthic Biodiversity"
+          },
+          "intro": {
+            "zh": "观察底栖生命（展示多门类海洋底栖生物标本，观察活体沙蚕运动，观看各门类海洋底栖动物生活视频）；在实操中体验海洋科学（亲身体验两种采泥器采集海底样品，观摩深海科考实物样品，倾听海洋科考知识与趣闻）。",
+            "en": "Meet a wide range of seafloor organisms through specimens, watch live sandworms move, and view footage of different groups of benthic animals. Then try two types of sediment samplers, examine deep-sea research samples, and hear stories and insights from ocean expeditions."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 36.5,
+          "y": 62.7,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "15",
+          "no": "15",
+          "category": 1,
+          "name": {
+            "zh": "暗海空间-科学区",
+            "en": "Dark Ocean Space: Science Zone"
+          },
+          "full": {
+            "zh": "暗海空间-科学区",
+            "en": "Dark Ocean Space: Science Zone"
+          },
+          "intro": {
+            "zh": "在黑暗空间中呈现发光藻类、细菌、矿物等自发光物体，以及利用光影、发光绘画形式展示原本不会发光的科普对象，感受海洋生物、地质、化学、物理的神秘和美丽。",
+            "en": "Enter a darkened space to encounter bioluminescent algae, bacteria, and minerals, along with light-based artworks that reveal the beauty and mystery of ocean life, geology, chemistry, and physics."
+          },
+          "space": {
+            "zh": "周楼B3-201/202",
+            "en": "Zhou Building B3-201/202"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 46.8,
+          "y": 61.8,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "16",
+          "no": "16",
+          "category": 1,
+          "name": {
+            "zh": "暗海空间-艺术区",
+            "en": "Dark Ocean Space: Art Zone"
+          },
+          "full": {
+            "zh": "暗海空间-艺术区",
+            "en": "Dark Ocean Space: Art Zone"
+          },
+          "intro": {
+            "zh": "利用光影与发光绘画，在黑暗空间中呈现海洋主题的艺术表达。",
+            "en": "Experience ocean-themed artistic expressions created with light, shadow, and luminescent painting in a darkened gallery."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 52,
+          "y": 61.8,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "17",
+          "no": "17",
+          "category": 1,
+          "name": {
+            "zh": "华南近海鱼类标本",
+            "en": "Coastal Fish Specimens of South China"
+          },
+          "full": {
+            "zh": "南溟鱼影——华南近海鱼类标本探秘",
+            "en": "Fishes of the South China Sea: Coastal Fish Specimen Treasures"
+          },
+          "intro": {
+            "zh": "以华南近海鱼类标本为线索，观察鱼类的体型、鳍条、鳞片与体色等特征，了解常见海鱼的分类、习性与栖息环境，在标本探秘中认识南海渔业资源与海洋生物多样性。",
+            "en": "Use coastal fish specimens from southern China to study body shape, fins, scales, and coloration; learn how common marine fishes are classified and where they live; and discover the fishery resources and marine biodiversity of the South China Sea."
+          },
+          "space": {
+            "zh": "共用周楼B3-204",
+            "en": "共用Zhou Building B3-204"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 52,
+          "y": 68.8,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "18",
+          "no": "18",
+          "category": 1,
+          "name": {
+            "zh": "石斑鱼&入侵物种",
+            "en": "Groupers & Invasive Species"
+          },
+          "full": {
+            "zh": "石斑鱼的秘密与海洋入侵物种",
+            "en": "The Secrets of Groupers and Marine Invasive Species"
+          },
+          "intro": {
+            "zh": "从生物多样性与生态关系延伸至海洋入侵物种，介绍物种传播途径、潜在生态影响及防范措施。",
+            "en": "Explore the links between biodiversity and ecological relationships while learning how invasive marine species spread, the risks they pose, and how they can be managed."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 57.2,
+          "y": 68.8,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "19",
+          "no": "19",
+          "category": 1,
+          "name": {
+            "zh": "大黄鱼",
+            "en": "Large Yellow Croaker"
+          },
+          "full": {
+            "zh": "良种有“芯”，鱼跃新程（大黄鱼种质创新与良种培育）",
+            "en": "Genomic Breeding of Large Yellow Croaker"
+          },
+          "intro": {
+            "zh": "展示大黄鱼基因组选择育种等前沿技术，揭秘“丰富老百姓餐桌”背后的科学故事。",
+            "en": "Discover how genomic selection and modern breeding methods help improve large yellow croaker aquaculture and bring better seafood to the table."
+          },
+          "space": {
+            "zh": "周楼B3-205",
+            "en": "Zhou Building B3-205"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 62.4,
+          "y": 68.8,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "20",
+          "no": "20",
+          "category": 1,
+          "name": {
+            "zh": "探秘珊瑚礁",
+            "en": "Exploring Coral Reefs"
+          },
+          "full": {
+            "zh": "探秘珊瑚礁",
+            "en": "Exploring Coral Reefs"
+          },
+          "intro": {
+            "zh": "了解珊瑚礁生态系统、生物多样性及科学调查方法，在趣味互动中增强公众对珊瑚礁生态保护的认识。",
+            "en": "Learn about coral-reef ecosystems, their biodiversity, and the methods scientists use to study them through hands-on activities."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 64.9,
+          "y": 62.3,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "21",
+          "no": "21",
+          "category": 1,
+          "name": {
+            "zh": "探秘深蓝",
+            "en": "Deep Blue Discovery"
+          },
+          "full": {
+            "zh": "海洋探秘局",
+            "en": "Ocean Discovery Mission"
+          },
+          "intro": {
+            "zh": "在跨学科体验中理解BBNJ协定与公海保护的意义，感受海洋生物多样性之美并树立守护蔚蓝的责任意识。",
+            "en": "Explore the BBNJ Agreement and high-seas conservation through an interdisciplinary experience, celebrate marine biodiversity, and consider our shared responsibility for the blue ocean."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 64.9,
+          "y": 64.5,
+          "color": "#7E9F7A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "1",
+          "no": "1",
+          "category": 0,
+          "name": {
+            "zh": "【主题展览】《海的颜色》",
+            "en": "The Color of the Sea"
+          },
+          "full": {
+            "zh": "【主题展览】海的颜色-从太空到深海的光影之旅",
+            "en": "The Color of the Sea: A Journey from Space to the Deep"
+          },
+          "intro": {
+            "zh": "这场展览将带我们乘坐一部“海洋电梯”——从卫星俯瞰的海面出发，一路下潜到万米深海。沿着深度的阶梯，我们将见证色彩如何被海水层层过滤，阳光如何一步步退场，生命又如何在黑暗中自己点亮光芒。",
+            "en": "Step into an “ocean elevator” and descend from the satellite-viewed surface to the hadal zone, discovering how seawater filters light and how life creates its own glow in the dark."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 41.7,
+          "y": 86.7,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "2",
+          "no": "2",
+          "category": 0,
+          "name": {
+            "zh": "“海丝一号”卫星",
+            "en": "HaiSi-1 Satellite"
+          },
+          "full": {
+            "zh": "跟着海丝卫星看海洋",
+            "en": "Seeing the Ocean through the HaiSi Satellites"
+          },
+          "intro": {
+            "zh": "操作SAR卫星模型、解读真实雷达影像，看“海丝一号”如何穿透云雾洞察海洋动态。",
+            "en": "Operate a SAR satellite model and interpret real radar images to see how HaiSi-1 observes ocean dynamics through clouds and fog."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 32.2,
+          "y": 84.4,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "3",
+          "no": "3",
+          "category": 0,
+          "name": {
+            "zh": "“海丝二号”卫星",
+            "en": "HaiSi-2 Satellite"
+          },
+          "full": {
+            "zh": "海洋水色遥感与“海丝二号”水色卫星",
+            "en": "Ocean Color Remote Sensing and the HaiSi-2 Satellite"
+          },
+          "intro": {
+            "zh": "光谱实验演示与遥感互动游戏，看“海丝二号”水色卫星捕捉海洋光谱信号，高精度监测海洋环境。",
+            "en": "Explore how the HaiSi-2 ocean-color satellite detects spectral signals from the sea and supports high-precision monitoring of the marine environment."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 32.2,
+          "y": 82.2,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "4",
+          "no": "4",
+          "category": 0,
+          "name": {
+            "zh": "激光雷达",
+            "en": "LiDAR"
+          },
+          "full": {
+            "zh": "电磁波与光、光纤",
+            "en": "Electromagnetic Waves, Light, and Fiber Optics"
+          },
+          "intro": {
+            "zh": "从光的本质与激光的起源讲起，了解光纤如何“让光走弯路”、激光如何被用来“看见海洋”。",
+            "en": "Discover the nature of light, the origins of lasers, how optical fibers guide light around corners, and how LiDAR helps us observe the ocean."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 44.5,
+          "y": 84.5,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "5",
+          "no": "5",
+          "category": 0,
+          "name": {
+            "zh": "蔚蓝约定——探秘“嘉庚”号",
+            "en": "A Blue Promise: Exploring the R/V Jia Geng"
+          },
+          "full": {
+            "zh": "蔚蓝约定——探秘“嘉庚”号",
+            "en": "A Blue Promise: Exploring the R/V Jia Geng"
+          },
+          "intro": {
+            "zh": "观看“嘉庚”号科考船影像纪实与感受深潜探测成果，沉浸体验海上科研实景。",
+            "en": "Watch documentary footage about the R/V Jia Geng and experience its deep-diving discoveries through an immersive view of life and research at sea."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 59.8,
+          "y": 85.7,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "6",
+          "no": "6",
+          "category": 0,
+          "name": {
+            "zh": "【主题展览】科考船&海洋生物",
+            "en": "Research Vessel Tara & Marine Biodiversity"
+          },
+          "full": {
+            "zh": "【主题展览】法国塔拉号科考船&生物多样性",
+            "en": "Research Vessel Tara and Marine Biodiversity"
+          },
+          "intro": {
+            "zh": "走进开放海域，随着塔拉号一同走进极地观察、微塑料追踪与珊瑚礁研究。",
+            "en": "Sail into the open ocean with Tara and learn how researchers study polar environments, track microplastics, and investigate coral reefs."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 33.9,
+          "y": 77.9,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "7",
+          "no": "7",
+          "category": 0,
+          "name": {
+            "zh": "【主题展览】公海保护",
+            "en": "Protecting the High Seas"
+          },
+          "full": {
+            "zh": "【主题展览】开放海域：在公海，看见海洋的另一面",
+            "en": "The Open Ocean: Discovering Another Side of the High Seas"
+          },
+          "intro": {
+            "zh": "了解公海保护从科学认知走向全球行动的路径，代入决策者的身份参与一场互动桌游，在利用与保护之间做出选择。",
+            "en": "Follow the path from scientific understanding to global action on high-seas protection, then make your own choices between use and conservation in an interactive board game."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 54.9,
+          "y": 76.4,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "8",
+          "no": "8",
+          "category": 0,
+          "name": {
+            "zh": "探索蔚蓝",
+            "en": "Exploring the Blue"
+          },
+          "full": {
+            "zh": "全景海洋，探索蔚蓝",
+            "en": "A Panoramic Ocean: Exploring the Blue"
+          },
+          "intro": {
+            "zh": "VR眼镜带你沉浸式上天入海；专业潜水教练团队带你了解如何成为一名潜水员，自由潜水、水肺潜水、技术潜水又为何物；五彩斑斓的水下影像是如何被记录的？",
+            "en": "Put on a VR headset for an immersive journey above and beneath the sea. With guidance from professional diving instructors, learn what it takes to become a diver and how freediving, scuba diving, and technical diving differ. Discover how the vivid underwater images we see are captured."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 52,
+          "y": 74.2,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "9",
+          "no": "9",
+          "category": 0,
+          "name": {
+            "zh": "漳江口站&底栖动物",
+            "en": "Zhangjiang Estuary Station & Benthic Animals"
+          },
+          "full": {
+            "zh": "泥滩有居民——底栖动物的隐藏生活",
+            "en": "Residents of the Mudflat: The Hidden Lives of Benthic Animals"
+          },
+          "intro": {
+            "zh": "理解底栖动物生活在哪里、如何适应泥滩环境，以及在食物网和海岸生态系统中发挥什么作用。",
+            "en": "Explore where benthic animals live, how they adapt to muddy tidal flats, and the roles they play in food webs and coastal ecosystems."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 57.2,
+          "y": 74.2,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "10",
+          "no": "10",
+          "category": 0,
+          "name": {
+            "zh": "台海站&浮游生物",
+            "en": "Taiwan Strait Station & Plankton"
+          },
+          "full": {
+            "zh": "探秘微观海洋，读懂浮游生灵，共护蔚蓝家园",
+            "en": "Discover the Microscopic Ocean and Protect Our Blue Home"
+          },
+          "intro": {
+            "zh": "认识浮游生物——海洋食物链的起点、地球约一半氧气的来源；了解赤潮为什么要监测，以及“一滴水”里能看出多少生态信息。",
+            "en": "Meet the plankton at the base of marine food webs and the source of roughly half of Earth’s oxygen, and learn why algal blooms are monitored."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 62.4,
+          "y": 74.2,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "11",
+          "no": "11",
+          "category": 0,
+          "name": {
+            "zh": "东山站&珊瑚",
+            "en": "Dongshan Station & Corals"
+          },
+          "full": {
+            "zh": "探秘珊瑚，守护蔚蓝",
+            "en": "Discover Corals and Protect the Blue Ocean"
+          },
+          "intro": {
+            "zh": "通过珊瑚骨骼直观理解无数珊瑚虫个体共同建造的宏伟“公寓楼”。触摸珊瑚“生命遗迹”，保护鲜活的珊瑚礁。",
+            "en": "See how countless coral polyps build reef “apartment blocks,” touch coral skeletal remains, and learn how to protect living coral reefs."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 67.5,
+          "y": 74.2,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "12",
+          "no": "12",
+          "category": 0,
+          "name": {
+            "zh": "【开放实验室】观测中心",
+            "en": "Observation Center"
+          },
+          "full": {
+            "zh": "【开放实验室】海洋观测与数据中心",
+            "en": "Open Lab: Ocean Observation and Data Center"
+          },
+          "intro": {
+            "zh": "参观“葵花”采水系统、ADCP、漂流浮标、水下滑翔机、原位大体积泵，体会创新科技赋能海洋科考。",
+            "en": "Explore a sunflower-style water sampler, ADCP, drifting buoys, underwater gliders, and in-situ large-volume pumps that support modern ocean research."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 80.5,
+          "y": 83.5,
+          "color": "#627A95",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "s_影像空间",
+          "no": "s_影像空间",
+          "category": -1,
+          "name": {
+            "zh": "影像空间",
+            "en": "Film Space"
+          },
+          "full": {
+            "zh": "影像空间",
+            "en": "Film Space"
+          },
+          "intro": {
+            "zh": "海洋文化纪录片《走近这片海》，看文学家眼中的“福建海洋”。",
+            "en": "Watch the marine-culture documentary Approaching This Sea and discover Fujian’s ocean through the eyes of writers."
+          },
+          "space": {
+            "zh": "周隆泉楼一层多功能厅",
+            "en": "Zhou Longquan Building 1FMultipurpose Hall"
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 93,
+          "y": 52,
+          "color": "#4A6FA5",
+          "textColor": "#FFFFFF",
+          "items": []
+        }
+      ]
+    },
+    {
+      "key": "xp",
+      "name": {
+        "zh": "希平楼",
+        "en": "Xiping Building"
+      },
+      "shortName": {
+        "zh": "希平",
+        "en": "Xiping"
+      },
+      "image": {
+        "zh": "assets/map/ov_xp.jpg",
+        "en": "assets/map/ov_xp_en.jpg"
+      },
+      "floors": [
+        {
+          "zh": "四楼",
+          "en": "4F"
+        },
+        {
+          "zh": "三楼",
+          "en": "3F"
+        },
+        {
+          "zh": "二楼",
+          "en": "2F"
+        },
+        {
+          "zh": "一楼",
+          "en": "1F"
+        }
+      ],
+      "categories": [
+        3,
+        4,
+        9,
+        10,
+        11
+      ],
+      "points": [
+        {
+          "id": "79",
+          "no": "79",
+          "category": 11,
+          "name": {
+            "zh": "情景实践课：蓝碳乐园",
+            "en": "Blue Carbon Adventure"
+          },
+          "full": {
+            "zh": "情景实践课：海洋戏精之寻秘蓝碳乐园",
+            "en": "Role-Play Lab: Secrets of the Blue Carbon World"
+          },
+          "intro": {
+            "zh": "通过情景演绎、互动探究和实践体验，认识海洋高效固碳的奥秘及其在应对气候变化中的重要作用，激发守护蓝色碳汇、践行低碳生活的责任意识。",
+            "en": "Use role-play, inquiry, and hands-on activities to discover how the ocean stores carbon and why blue-carbon ecosystems are vital for climate action."
+          },
+          "space": {
+            "zh": "希平楼C2-403",
+            "en": "Xiping Building C2-403"
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 46.3,
+          "y": 15.6,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "80",
+          "no": "80",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：火山探险",
+            "en": "Volcano Explorers"
+          },
+          "full": {
+            "zh": "地球的“怒火”——火山探秘之旅",
+            "en": "Earth’s Fury: A Journey into Volcanoes"
+          },
+          "intro": {
+            "zh": "结合喷发影像、火山结构模型和模拟实验，理解火山的形成、结构及喷发机制，并认识火山活动带来的自然灾害与资源价值。",
+            "en": "Combine eruption footage, volcano models, and simulations to understand how volcanoes form, how eruptions work, and both the hazards and resources they create."
+          },
+          "space": {
+            "zh": "希平楼C2-404",
+            "en": "Xiping Building C2-404"
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 58,
+          "y": 19,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "81",
+          "no": "81",
+          "category": 10,
+          "name": {
+            "zh": "（游戏）“盲盒” 摸摸乐",
+            "en": "Ocean Mystery Box"
+          },
+          "full": {
+            "zh": "（游戏专区）海洋“盲盒”摸摸乐",
+            "en": "Game Zone: Ocean Mystery Box"
+          },
+          "intro": {
+            "zh": "触摸神秘摸箱中的海洋生物模型，猜猜它们是谁，感受不同生物的身体特征，并了解外壳、尖刺等特殊构造背后的生存秘密。",
+            "en": "Feel marine animal models hidden inside mystery boxes, guess what they are, and discover the survival functions of shells, spines, and other special structures."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 41.3,
+          "y": 27.2,
+          "color": "#000000",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "82",
+          "no": "82",
+          "category": 10,
+          "name": {
+            "zh": "（游戏）潮间带“生物蹲”",
+            "en": "Intertidal Creature Squat"
+          },
+          "full": {
+            "zh": "（游戏专区）潮间带“生物蹲”大挑战",
+            "en": "Game Zone: Intertidal “Creature Squat” Challenge"
+          },
+          "intro": {
+            "zh": "模仿生物动作，开展反应力大比拼，在欢声笑语中认识潮间带生物的外形特点和生存本领。",
+            "en": "Imitate intertidal animals in a fast-paced reaction game while learning about their body forms and survival strategies."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "四楼",
+            "en": "4F"
+          },
+          "x": 48.7,
+          "y": 27.2,
+          "color": "#000000",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "57",
+          "no": "57",
+          "category": 4,
+          "name": {
+            "zh": "酸碱侦探所",
+            "en": "Ocean pH Detectives"
+          },
+          "full": {
+            "zh": "酸碱侦探所：用光破解海洋的秘密",
+            "en": "Ocean pH Detectives: Unlocking the Sea’s Secrets with Light"
+          },
+          "intro": {
+            "zh": "手搓简易分光光度计，掌握分光光度法等酸碱度测定的科学原理，理解光在破解海洋酸碱秘密中的关键作用。",
+            "en": "Build a simple spectrophotometer, learn how spectrophotometry measures ocean pH, and see why light is key to understanding seawater chemistry."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 65.7,
+          "y": 45.2,
+          "color": "#A7706A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "58",
+          "no": "58",
+          "category": 4,
+          "name": {
+            "zh": "碳足迹",
+            "en": "Carbon Footprint"
+          },
+          "full": {
+            "zh": "碳足迹及厦门湾垃圾轨迹模拟",
+            "en": "Carbon Footprint and Xiamen Bay Debris Tracking"
+          },
+          "intro": {
+            "zh": "通过设计好的碳足迹计算器，了解自身的年碳排放量，对比全球人均排放量，制定个人的碳减排计划。",
+            "en": "Estimate your annual carbon emissions, compare them with the global average, and design a personal plan to reduce your footprint."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 59.7,
+          "y": 45.2,
+          "color": "#A7706A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "59",
+          "no": "59",
+          "category": 4,
+          "name": {
+            "zh": "【主题展览】科技成果转化",
+            "en": "Science-to-Application Showcase"
+          },
+          "full": {
+            "zh": "【主题展览】成果转化展览",
+            "en": "Science-to-Application Exhibition"
+          },
+          "intro": {
+            "zh": "直观感受科学前沿热点如何经过成果转化，作用于海洋与人类的可持续健康发展。",
+            "en": "See how cutting-edge research is translated into practical solutions for a sustainable ocean and a healthier society."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 69.7,
+          "y": 38.5,
+          "color": "#A7706A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "60",
+          "no": "60",
+          "category": 4,
+          "name": {
+            "zh": "海洋生物“正反派”",
+            "en": "Marine Life: Heroes & Villains"
+          },
+          "full": {
+            "zh": "海洋生物的“正反派”",
+            "en": "Heroes and Villains of Marine Life"
+          },
+          "intro": {
+            "zh": "透过丰富的底栖生物标本、监测心跳的鲍鱼、克服污损生物影响的涂料，“看见”生物的两面性。",
+            "en": "Explore the two sides of marine organisms through benthic specimens, heartbeat-monitoring abalone, and antifouling coatings inspired by marine life."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 51.7,
+          "y": 48,
+          "color": "#A7706A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "61",
+          "no": "61",
+          "category": 4,
+          "name": {
+            "zh": "海洋抗菌肽",
+            "en": "Marine Antimicrobial Peptides"
+          },
+          "full": {
+            "zh": "探秘海洋抗菌肽：无抗新未来",
+            "en": "Discovering Marine Antimicrobial Peptides: An Antibiotic-Free Future"
+          },
+          "intro": {
+            "zh": "观察抗菌肽的动物来源、体验抗菌肽对对碰和抗菌肽投掷赛，了解海洋动物抗菌肽发酵的生产流程，以及在养殖、日化、食品、医药健康等领域的广泛应用。",
+            "en": "Explore the animal sources of antimicrobial peptides, take part in the Antimicrobial Peptide Match and Toss games, and learn how these substances are produced through fermentation and used in aquaculture, personal care, food, and medicine."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 45.7,
+          "y": 48,
+          "color": "#A7706A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "62",
+          "no": "62",
+          "category": 4,
+          "name": {
+            "zh": "海绵骨针",
+            "en": "Sponge Spicules"
+          },
+          "full": {
+            "zh": "海绵骨针-来自海洋的“护肤小能手”",
+            "en": "Sponge Spicules: Marine Skin-Care Helpers"
+          },
+          "intro": {
+            "zh": "从海绵动物标本展、海绵骨针微观观测，到骨针产品体验，亲身感受海绵生物资源从科研到应用的转化价值。",
+            "en": "Inspect sponge specimens and spicules under the microscope, then explore products that show how marine biological resources move from research to real-world use."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 38.7,
+          "y": 48,
+          "color": "#A7706A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "63",
+          "no": "63",
+          "category": 4,
+          "name": {
+            "zh": "【主题展览】物理化学规律",
+            "en": "Physics, Chemistry & Fun"
+          },
+          "full": {
+            "zh": "【主题展览】物理化学规律科普互动展",
+            "en": "Interactive Exhibition: Physical and Chemical Principles"
+          },
+          "intro": {
+            "zh": "生动展示物理（光学、力学、电磁学演示与原理介绍，双缝干涉、能量转换）、化学（观摩实物元素周期表，亲手体验最重和最轻的金属，利用醋制备软壳蛋放出二氧化碳，倾听稀土元素介绍与深海采矿前沿）的魅力。",
+            "en": "Explore the wonders of physics and chemistry through hands-on exhibits. Discover optics, mechanics, and electromagnetism; see double-slit interference and energy conversion; examine a physical periodic table; handle the heaviest and lightest metals; dissolve an eggshell with vinegar to release carbon dioxide; and learn about rare-earth elements and deep-sea mining."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 32.7,
+          "y": 48,
+          "color": "#A7706A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "64",
+          "no": "64",
+          "category": 4,
+          "name": {
+            "zh": "【主题展览】军事装备与科技创新",
+            "en": "Thematic Exhibition: Military Equipment and Technological Innovation"
+          },
+          "full": {
+            "zh": "【主题展览】军事装备与科技创新",
+            "en": "Thematic Exhibition: Military Equipment and Technological Innovation"
+          },
+          "intro": {
+            "zh": "从海、陆、空军事装备模型看我国国防科技发展脉络，从国际经典航天装备模型看人类探索太空的历程；在“两弹一星”精神中，读懂海洋科考与国防科技同源共进的自主创新之路。",
+            "en": "Trace China’s advances in defense technology through sea, land, and air equipment models, and explore the history of space exploration through classic international spacecraft models. Discover how the spirit of developing the “two bombs, one satellite” reflects a shared path of independent innovation in ocean research and national defense."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 36.7,
+          "y": 37.6,
+          "color": "#A7706A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "65",
+          "no": "65",
+          "category": 4,
+          "name": {
+            "zh": "虚拟仿真实验体验",
+            "en": "Virtual Simulation Experience"
+          },
+          "full": {
+            "zh": "【开放实验室】虚拟探海，用科技触摸深蓝",
+            "en": "Open Lab: Exploring the Deep Blue through Virtual Technology"
+          },
+          "intro": {
+            "zh": "沉浸体验五个海洋科研场景：大洋水体中痕量金属分析、碳酸盐系统原位监测、海洋浮游动物生态调查、近海沉积物采样、砂质沉积物分析。",
+            "en": "Explore five ocean research scenarios: trace-metal analysis in open-ocean water, in-situ carbonate-system monitoring, ecological surveys of marine zooplankton, coastal sediment sampling, and sandy-sediment analysis."
+          },
+          "space": {
+            "zh": "希平楼C1-303",
+            "en": "Xiping Building C1-303"
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 14,
+          "y": 34.9,
+          "color": "#A7706A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "74",
+          "no": "74",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：极地科考",
+            "en": "Polar Research"
+          },
+          "full": {
+            "zh": "南极科考那些事儿",
+            "en": "Doing Science in Antarctica"
+          },
+          "intro": {
+            "zh": "通过真实科考影像、动手操作和互动问答，增强对南极环境及海洋科学研究的认识。",
+            "en": "Learn about Antarctica and polar marine research through real expedition footage, hands-on activities, and interactive questions."
+          },
+          "space": {
+            "zh": "希平楼C1-304",
+            "en": "Xiping Building C1-304"
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 15.7,
+          "y": 28.5,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "75",
+          "no": "75",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：污水处理",
+            "en": "Wastewater Treatment"
+          },
+          "full": {
+            "zh": "污水处理小侦探：探秘工艺&亲手制作简易净水器",
+            "en": "Wastewater Detectives: Build a Simple Water Purifier"
+          },
+          "intro": {
+            "zh": "生活中的污水是如何从浊变清的？搭建简易污水处理装置，直观了解净化流程背后的科学原理。",
+            "en": "Discover how dirty water becomes clear by building a simple treatment system and exploring the science behind each purification step."
+          },
+          "space": {
+            "zh": "希平楼C2-301",
+            "en": "Xiping Building C2-301"
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 57.7,
+          "y": 35.6,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "76",
+          "no": "76",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：矿物身份证",
+            "en": "Mineral Identification"
+          },
+          "full": {
+            "zh": "地质侦探社：给矿物办一张“身份证”",
+            "en": "Geology Detectives: Giving Minerals an Identity Card"
+          },
+          "intro": {
+            "zh": "通过观察颜色、光泽、硬度等特征，学习矿物鉴定方法，在动手实践中认识常见矿物，激发对地球科学的探索兴趣。",
+            "en": "Use color, luster, hardness, and other properties to identify common minerals and discover the excitement of Earth science."
+          },
+          "space": {
+            "zh": "希平楼C2-308",
+            "en": "Xiping Building C2-308"
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 63.7,
+          "y": 35.6,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "77",
+          "no": "77",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：岩石变形",
+            "en": "Rock Deformation Lab"
+          },
+          "full": {
+            "zh": "岩石变形“实验室”",
+            "en": "The Rock Deformation Laboratory"
+          },
+          "intro": {
+            "zh": "模拟不同压力、温度条件下岩石的受力变化，观察褶皱、断裂等地质构造的形成过程，直观理解地壳运动与板块作用的原理，感受地球内部力量的神奇。",
+            "en": "Simulate how rocks respond to pressure and temperature, observe folds and fractures forming, and connect these structures to plate tectonics and crustal movement."
+          },
+          "space": {
+            "zh": "希平楼C3-302",
+            "en": "Xiping Building C3-302"
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 91.7,
+          "y": 36.4,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "78",
+          "no": "78",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：藻类碳压舱效应",
+            "en": "Algae & the Carbon Ballast Effect"
+          },
+          "full": {
+            "zh": "小藻造“石头”：硅藻与颗石藻的碳压舱效应",
+            "en": "How Tiny Algae Build “Stones”: Diatoms, Coccolithophores, and Carbon Ballasting"
+          },
+          "intro": {
+            "zh": "认识海洋中的“玻璃建筑师”硅藻和“石灰石艺术家”颗石藻，动手“制作”白色云雾状沉淀碳酸钙，亲眼见证雪崩式的震撼。",
+            "en": "Meet diatoms, the ocean’s glass architects, and coccolithophores, its limestone artists, then create a calcium-carbonate “snowstorm” and see the biological carbon pump in action."
+          },
+          "space": {
+            "zh": "希平楼C3-311",
+            "en": "Xiping Building C3-311"
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 91.7,
+          "y": 41,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "51",
+          "no": "51",
+          "category": 3,
+          "name": {
+            "zh": "云、风和雨",
+            "en": "Clouds, Wind & Rain"
+          },
+          "full": {
+            "zh": "天气过程——云、风和雨是怎么形成的",
+            "en": "Weather Processes: How Clouds, Wind, and Rain Form"
+          },
+          "intro": {
+            "zh": "模拟不同温湿度变化，亲手制造“云-风-雨”的天气过程。",
+            "en": "Change temperature and humidity to create your own cloud, wind, and rain in a hands-on weather simulation."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 57.7,
+          "y": 58.6,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "52",
+          "no": "52",
+          "category": 3,
+          "name": {
+            "zh": "海水分层与压力",
+            "en": "Ocean Stratification & Pressure"
+          },
+          "full": {
+            "zh": "海水分层与压力的奥秘",
+            "en": "The Science of Ocean Stratification and Pressure"
+          },
+          "intro": {
+            "zh": "通过互动实验了解探索海洋层化、内波现象、双扩散现象、海水颜色、伯努利现象等。",
+            "en": "Explore ocean stratification, internal waves, double diffusion, seawater color, and Bernoulli’s principle through interactive demonstrations."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 66.7,
+          "y": 66.7,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "53",
+          "no": "53",
+          "category": 3,
+          "name": {
+            "zh": "海洋中的扩散与波动",
+            "en": "Diffusion & Waves"
+          },
+          "full": {
+            "zh": "海洋中的扩散与波动",
+            "en": "Diffusion and Wave Motion in the Ocean"
+          },
+          "intro": {
+            "zh": "观察指状结构并联系海洋热量与盐分扩散过程；利用造波板和水槽演示规则波浪，理解波浪传播与水质点运动的区别。",
+            "en": "Observe finger-like mixing structures linked to heat and salt diffusion, then generate waves in a tank and compare wave propagation with water-particle motion."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 60.7,
+          "y": 66.7,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "54",
+          "no": "54",
+          "category": 3,
+          "name": {
+            "zh": "创客workshop",
+            "en": "Maker Workshop"
+          },
+          "full": {
+            "zh": "创客workshop 上午场《与海共生：未来海岸城市实验室》 下午场《与光共舞：墨卡托投影探案专组》",
+            "en": "Maker Workshop: Future Coastal Cities and the Mercator Projection"
+          },
+          "intro": {
+            "zh": "厦门大学创意与创新学院×海洋与地球学院，用创造中的科学解读“海平面上升，哪些城市会面临被淹没的风险”、“世界地图是个巨大的<骗局>”，在投影变形与真实海岸线之间，尝试校准我们观看海洋与世界的方式。",
+            "en": "Join the College of Creative Innovation and the College of Ocean and Earth Sciences to explore sea-level risk and map distortion through creative, hands-on science."
+          },
+          "space": {
+            "zh": "希平楼C2-202",
+            "en": "Xiping Building C2-202"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 48.7,
+          "y": 61.5,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "55",
+          "no": "55",
+          "category": 3,
+          "name": {
+            "zh": "大洋环流",
+            "en": "Ocean Circulation"
+          },
+          "full": {
+            "zh": "大西洋的呼吸：一场永不停息的海洋循环",
+            "en": "The Breathing Atlantic: An Ocean in Constant Motion"
+          },
+          "intro": {
+            "zh": "复刻热胀冷缩、温盐环流、水团运动等自然现象，了解由气候变暖引起的微小温盐变化，对整个海洋生态和地球气候环境的影响。",
+            "en": "Recreate thermal expansion, thermohaline circulation, and water-mass movement, and discover how small changes in temperature and salinity affect the global ocean and climate."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 37.2,
+          "y": 66.7,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "56",
+          "no": "56",
+          "category": 9,
+          "name": {
+            "zh": "海的邮局",
+            "en": "Ocean Post Office"
+          },
+          "full": {
+            "zh": "海的邮局",
+            "en": "Ocean Post Office"
+          },
+          "intro": {
+            "zh": "江海万里，纸短情长。亲笔为海洋写一封情书，或者留下你对于海洋的疑问/开放日的活动反馈，就有机会收到来自科学家/组委会的回答！",
+            "en": "Write a letter to the ocean or leave a question or event feedback. Selected messages will receive replies from scientists or the organizing committee."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 33.7,
+          "y": 60.1,
+          "color": "#286B91",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "70",
+          "no": "70",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：贝类分类学与解剖",
+            "en": "Shellfish Taxonomy & Dissection"
+          },
+          "full": {
+            "zh": "贝类大侦探：解锁海洋生物的身份密码",
+            "en": "Shellfish Detectives: Decoding Marine Organisms"
+          },
+          "intro": {
+            "zh": "以贝壳形态、纹路及解剖特征为线索，通过观察与比对识别不同贝类，在趣味探索中了解软体动物的分类知识与生态习性。",
+            "en": "Use shell shape, patterns, and internal anatomy to identify mollusks and learn about their classification and ecology."
+          },
+          "space": {
+            "zh": "希平楼C1-202",
+            "en": "Xiping Building C1-202"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 11.3,
+          "y": 60.4,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "71",
+          "no": "71",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：沙蚕标本",
+            "en": "Sandworm Specimen Workshop"
+          },
+          "full": {
+            "zh": "沙滩里的小怪物：沙蚕的标本制作与鉴定",
+            "en": "Little Monsters of the Beach: Sandworm Specimen Preparation and Identification"
+          },
+          "intro": {
+            "zh": "走进沙蚕的世界，亲手制作标本、解剖疣足，在显微镜下观察它独特的吻部与颚齿，学习海洋底栖生物形态的鉴定，体验从活体到标本的完整过程。",
+            "en": "Prepare a sandworm specimen, dissect its parapodia, and examine its proboscis and jaws under the microscope while learning how benthic organisms are identified."
+          },
+          "space": {
+            "zh": "希平楼C1-204",
+            "en": "Xiping Building C1-204"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 11.3,
+          "y": 54,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "72",
+          "no": "72",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：抗菌肽",
+            "en": "Antimicrobial Peptides Lab"
+          },
+          "full": {
+            "zh": "抗菌新“蔚”来，真是“肽”酷啦！",
+            "en": "A New Blue Future for Antimicrobial Peptides"
+          },
+          "intro": {
+            "zh": "从海洋生物复杂的生态环境出发，认识海洋生物抵御细菌侵害的天然物质——抗菌肽，了解其抗菌机制，并在模拟实验中体验其抗菌能力的评价。",
+            "en": "Begin with the trade-offs of conventional preservatives and the promise of antimicrobial peptides. See how these natural compounds selectively inhibit food-spoilage bacteria, support greener food systems, and can be evaluated through a simulated antimicrobial test."
+          },
+          "space": {
+            "zh": "希平楼C2-203",
+            "en": "Xiping Building C2-203"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 66.7,
+          "y": 60.1,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "73",
+          "no": "73",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：海洋酸化",
+            "en": "Ocean Acidification Lab"
+          },
+          "full": {
+            "zh": "喝“盐汽水“的“营养加工厂”",
+            "en": "The “Nutrient Factory” That Drinks Salty Soda"
+          },
+          "intro": {
+            "zh": "从盐汽水的味道出发，通过紫甘蓝变色、贝壳遇酸冒泡、藻液颜色变化等趣味实验，直观揭示二氧化碳如何引发海洋酸化及其对海洋生物的影响",
+            "en": "Use red-cabbage indicators, shell-and-acid reactions, and algal color changes to see how carbon dioxide drives ocean acidification and affects marine life."
+          },
+          "space": {
+            "zh": "希平楼C2-204",
+            "en": "Xiping Building C2-204"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 53.7,
+          "y": 66.3,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "43",
+          "no": "43",
+          "category": 3,
+          "name": {
+            "zh": "台风模拟",
+            "en": "Typhoon Simulator"
+          },
+          "full": {
+            "zh": "台风模拟实验室",
+            "en": "Typhoon Simulation Laboratory"
+          },
+          "intro": {
+            "zh": "在互动网页上亲手改变海温、水汽、风切变与副高位置，观察台风能否生成、路径如何变化。",
+            "en": "Adjust sea-surface temperature, moisture, wind shear, and the subtropical high in an interactive model to see whether a typhoon forms and how its track changes."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 42.7,
+          "y": 83,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "44",
+          "no": "44",
+          "category": 3,
+          "name": {
+            "zh": "【主题展览】海纳百问",
+            "en": "50 Questions About the Ocean"
+          },
+          "full": {
+            "zh": "【主题展览】海纳百问之50个海洋科学问题",
+            "en": "A Hundred Questions About the Ocean: 50 Marine Science Puzzles"
+          },
+          "intro": {
+            "zh": "从海洋与气候、海洋与日常生活等多个角度入手，关注联合国气候报告、科学前沿进展中有趣的科学问题。",
+            "en": "Explore intriguing questions from climate science to everyday life, inspired by IPCC reports and the latest research frontiers."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 39.7,
+          "y": 80.2,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "45",
+          "no": "45",
+          "category": 3,
+          "name": {
+            "zh": "数字孪生海洋",
+            "en": "Digital Twin Ocean"
+          },
+          "full": {
+            "zh": "数字孪生海洋 DITTO",
+            "en": "Digital Twin Ocean: DITTO"
+          },
+          "intro": {
+            "zh": "以“大海有一个会计算的替身”为核心比喻，理解“观测—同化—预演—决策”的基本逻辑。",
+            "en": "Think of the digital twin as a “computational stand-in for the ocean” and learn how observation, data assimilation, forecasting, and decision-making work together."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 54.7,
+          "y": 84.5,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "46",
+          "no": "46",
+          "category": 3,
+          "name": {
+            "zh": "板块运动与气候变化",
+            "en": "Plate Tectonics & Climate"
+          },
+          "full": {
+            "zh": "“放眼看地球”——板块运动与气候变化",
+            "en": "A Planetary Perspective: Plate Tectonics and Climate Change"
+          },
+          "intro": {
+            "zh": "融合板块运动和古气候模拟结果，生动展示百万年乃至上亿年前的气候变化趋势，把握未来气候走向。",
+            "en": "Combine plate-tectonic reconstructions with paleoclimate simulations to explore climate change over millions of years and its relevance to the future."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 57.7,
+          "y": 81.6,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "47",
+          "no": "47",
+          "category": 3,
+          "name": {
+            "zh": "声波中的定位密码",
+            "en": "Acoustic Positioning"
+          },
+          "full": {
+            "zh": "声波中的定位密码",
+            "en": "Positioning with Sound"
+          },
+          "intro": {
+            "zh": "操控水下机器人，挑战搜寻任务，体验潜水通话系统的声波隔水传音，解锁海洋探测与通信的科技奥秘。",
+            "en": "Pilot an underwater robot, complete a search mission, try an underwater voice link, and discover how sound enables ocean exploration and communication."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 68.3,
+          "y": 81.4,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "48",
+          "no": "48",
+          "category": 3,
+          "name": {
+            "zh": "自研 AUV",
+            "en": "Student-Built AUV"
+          },
+          "full": {
+            "zh": "实验室自研 AUV 展示",
+            "en": "Laboratory-Built Autonomous Underwater Vehicle"
+          },
+          "intro": {
+            "zh": "结合动态巡航与实时图像回传演示，展示具备水声/无线双链路协同探测能力的无人潜航器（AUV）在水下精准锁定目标和传输数据的功能。",
+            "en": "See an AUV demonstrate autonomous cruising, live image transmission, and coordinated acoustic-wireless communication while locating targets and collecting data underwater."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 68.3,
+          "y": 78.5,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "49",
+          "no": "49",
+          "category": 3,
+          "name": {
+            "zh": "AI 听海",
+            "en": "Listening to the Ocean with AI"
+          },
+          "full": {
+            "zh": "AI 听海：于噪声中守护鲸歌",
+            "en": "AI Listens to the Sea: Protecting Whale Songs amid Noise"
+          },
+          "intro": {
+            "zh": "聆听海洋噪声与鲸豚声音，通过趣味游戏探索水声奥秘，体验人工智能在海洋声音识别中的应用。",
+            "en": "Listen to ocean noise and whale and dolphin calls, explore underwater acoustics through fun games, and see how artificial intelligence is used to recognize ocean sounds."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 68.3,
+          "y": 75.7,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "50",
+          "no": "50",
+          "category": 3,
+          "name": {
+            "zh": "海平面变化",
+            "en": "Sea-Level Change"
+          },
+          "full": {
+            "zh": "倾听地球的呼吸：海平面变化的秘密",
+            "en": "Listening to Earth Breathe: The Secrets of Sea-Level Change"
+          },
+          "intro": {
+            "zh": "观察海岸带模型找线索，再请有孔虫“作证”推断海岸带位置，一步步理清海岸变迁的来龙去脉",
+            "en": "Inspect a coastal-zone model for clues, then use foraminifera as evidence to reconstruct how the coastline has changed over time and piece together the story of coastal evolution."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 81.7,
+          "y": 80.2,
+          "color": "#5AADB6",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "66",
+          "no": "66",
+          "category": 4,
+          "name": {
+            "zh": "波浪与洋流",
+            "en": "Waves & Ocean Currents"
+          },
+          "full": {
+            "zh": "【开放实验室】波浪与洋流",
+            "en": "Open Lab: Waves and Ocean Currents"
+          },
+          "intro": {
+            "zh": "揭示波浪的触发条件、能量转化机制及对建筑物的冲击荷载，揭秘海岸工程和气候建模的深层原理。",
+            "en": "Discover how waves form, how their energy is transferred, and how wave loading affects structures, with applications in coastal engineering and climate modeling."
+          },
+          "space": {
+            "zh": "希平楼C1-103",
+            "en": "Xiping Building C1-103"
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 11.7,
+          "y": 77.4,
+          "color": "#A7706A",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "67",
+          "no": "67",
+          "category": 11,
+          "name": {
+            "zh": "情景实践课：海底地貌探险",
+            "en": "Seascape Lab"
+          },
+          "full": {
+            "zh": "情景实践课：噢深（OCEAN）深潜实验室：海底地貌探险",
+            "en": "Hands-On Ocean Lab: Exploring Submarine Landforms"
+          },
+          "intro": {
+            "zh": "化身“科学探究员”，认识海洋深处“隐藏”的复杂地形，亲手制作生态模型，探索“山野（陆地） → 大陆架 → 海沟 → 海底火山 → 海脊”的奇妙世界。",
+            "en": "Become a young ocean investigator, explore hidden underwater terrain, and build a model that traces the journey from land to continental shelf, trench, seamount, and mid-ocean ridge."
+          },
+          "space": {
+            "zh": "希平楼C1-101",
+            "en": "Xiping Building C1-101"
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 7.3,
+          "y": 84.1,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "68",
+          "no": "68",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：螯虾解剖",
+            "en": "Crayfish Dissection"
+          },
+          "full": {
+            "zh": "螯虾解剖小课堂",
+            "en": "Crayfish Dissection Workshop"
+          },
+          "intro": {
+            "zh": "亲手解剖红螯螯虾，了解螯虾作为典型甲壳动物的外部形态与内部结构，揭开灰蓝色血液的秘密。",
+            "en": "Dissect a redclaw crayfish to study crustacean anatomy and discover the surprising science behind its blue-gray blood."
+          },
+          "space": {
+            "zh": "希平楼C1-102",
+            "en": "Xiping Building C1-102"
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 11.7,
+          "y": 80.8,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "69",
+          "no": "69",
+          "category": 11,
+          "name": {
+            "zh": "实验课堂：鱼类解剖",
+            "en": "Fish Dissection"
+          },
+          "full": {
+            "zh": "如何认识一条“鱼”？",
+            "en": "How Well Do You Know a Fish?"
+          },
+          "intro": {
+            "zh": "通过与人类身体的对比、以及动手解剖一条鱼，认识鱼适合生活在水中的呼吸、运动、感觉器官，了解海洋鱼类适应不同水体环境的生存策略。",
+            "en": "Compare fish anatomy with the human body through dissection and explore the respiratory, locomotor, and sensory adaptations that allow fish to thrive in water."
+          },
+          "space": {
+            "zh": "希平楼C1-104",
+            "en": "Xiping Building C1-104"
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 11.7,
+          "y": 73.9,
+          "color": "#D93D4A",
+          "textColor": "#FFFFFF",
+          "items": []
+        }
+      ]
+    },
+    {
+      "key": "jq",
+      "name": {
+        "zh": "金泉楼",
+        "en": "Jinquan Building"
+      },
+      "shortName": {
+        "zh": "金泉",
+        "en": "Jinquan"
+      },
+      "image": {
+        "zh": "assets/map/ov_jq.jpg",
+        "en": "assets/map/ov_jq_en.jpg"
+      },
+      "floors": [
+        {
+          "zh": "三楼",
+          "en": "3F"
+        },
+        {
+          "zh": "二楼",
+          "en": "2F"
+        },
+        {
+          "zh": "一楼",
+          "en": "1F"
+        }
+      ],
+      "categories": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "points": [
+        {
+          "id": "95",
+          "no": "95",
+          "category": 5,
+          "name": {
+            "zh": "浮游植物历险",
+            "en": "Adventures of Phytoplankton"
+          },
+          "full": {
+            "zh": "浮游植物历险记",
+            "en": "The Adventures of Phytoplankton"
+          },
+          "intro": {
+            "zh": "“跟着”浮游植物一起，穿梭显微镜下的海洋森林，体会硅藻艺术与微观之美，揭秘海洋疑云——生态系统中，到底谁吃了谁？",
+            "en": "Follow phytoplankton through a microscopic ocean forest, discover the artistry of diatoms, and solve the mystery of who eats whom in marine ecosystems."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 58.8,
+          "y": 23.5,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "96",
+          "no": "96",
+          "category": 5,
+          "name": {
+            "zh": "森林与爬宠",
+            "en": "Forests & Reptiles"
+          },
+          "full": {
+            "zh": "山海之间——森林与爬宠的奇妙相遇",
+            "en": "Between Mountains and Sea: Forests and Reptiles"
+          },
+          "intro": {
+            "zh": "以“从森林到山海”为主线，串联植物与动物的生态故事，感受生物多样性的魅力，理解森林生态系统与两栖爬行动物之间的紧密联系。",
+            "en": "Follow an ecological story “from forest to mountains and sea,” connecting plants and animals to celebrate biodiversity and reveal the close relationships between forest ecosystems and amphibians and reptiles."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 69.2,
+          "y": 23.5,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "97",
+          "no": "97",
+          "category": 5,
+          "name": {
+            "zh": "如何生态亲海",
+            "en": "Sustainable Seas"
+          },
+          "full": {
+            "zh": "如何生态亲海",
+            "en": "How to Enjoy the Sea Sustainably"
+          },
+          "intro": {
+            "zh": "将海岸带保护知识融入趣味桌游互动，在策略博弈中认识红树林、滩涂、近海生物等海洋生态系统，掌握低干扰、可持续的亲海方式。",
+            "en": "Explore coastal conservation through a lively board game. Learn about mangroves, tidal flats, and nearshore marine life while developing low-impact, sustainable ways to enjoy the sea."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 81.7,
+          "y": 23.5,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "98",
+          "no": "98",
+          "category": 5,
+          "name": {
+            "zh": "微塑料追踪",
+            "en": "Tracking Microplastics"
+          },
+          "full": {
+            "zh": "微塑料追踪计划：从海洋到餐桌",
+            "en": "Microplastic Tracking: From Ocean to Table"
+          },
+          "intro": {
+            "zh": "看不见的塑料，藏着怎样的海洋危机？从生活中的塑料碎片，到显微镜下的微纳颗粒；从海水青鳉鱼的生命历程，到微塑料与人体健康的潜在关联，带你化身海洋环境侦探，通过实物探索、显微观察和趣味互动，层层追踪微塑料的隐秘旅程，揭开海洋污染背后的科学真相！",
+            "en": "What hidden ocean crises lie behind the plastics we use every day? From everyday fragments to micro- and nanoplastic particles under the microscope, and from the life cycle of seawater medaka to potential links between microplastics and human health, become an ocean-environment detective. Explore real samples, use microscopes, and join interactive challenges to trace microplastics through the environment and uncover the science behind marine pollution."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 69.2,
+          "y": 16.6,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "99",
+          "no": "99",
+          "category": 5,
+          "name": {
+            "zh": "湿地侦探记",
+            "en": "Wetland Detective"
+          },
+          "full": {
+            "zh": "湿地“天眼”大侦探：追踪污染物的旅行",
+            "en": "Wetland’s “Sky Eye” Detective: Tracking the Journey of Pollutants"
+          },
+          "intro": {
+            "zh": "认识遥感在生态恢复方面的应用，了解污染物在湿地生态系统中的迁移路径及方式，认识湿地的过滤功能。",
+            "en": "Discover how remote sensing supports ecological restoration, follow the pathways by which pollutants move through wetland ecosystems, and learn how wetlands filter water and support environmental health."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 91.8,
+          "y": 19.4,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "102",
+          "no": "102",
+          "category": 5,
+          "name": {
+            "zh": "海洋化学元素剧本杀",
+            "en": "Ocean Chemical Elements Mystery"
+          },
+          "full": {
+            "zh": "海洋化学元素剧本杀-2：《青屿湾2012》",
+            "en": "Ocean Chemical Elements Mystery: Qingyu Bay 2012, Part 2"
+          },
+          "intro": {
+            "zh": "沉浸式主题剧本杀邀你入局，谁能成为继碳长老之后的下一届“元素主席”？缜密、烧脑、竞拍、交易，怎样才能写出“海的结局”？",
+            "en": "Enter an immersive mystery game, compete to become the next “Element Chair,” and negotiate, bid, and trade your way toward the ocean’s ending."
+          },
+          "space": {
+            "zh": "金泉楼B303",
+            "en": "Jinquan Building B303"
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 91.8,
+          "y": 15.5,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "103",
+          "no": "103",
+          "category": 9,
+          "name": {
+            "zh": "海的邮局",
+            "en": "Ocean Post Office"
+          },
+          "full": {
+            "zh": "海的邮局",
+            "en": "Ocean Post Office"
+          },
+          "intro": {
+            "zh": "江海万里，纸短情长。亲笔为海洋写一封情书，或者留下你对于海洋的疑问/开放日的活动反馈，就有机会收到来自科学家/组委会的回答！",
+            "en": "Write a letter to the ocean or leave a question or event feedback. Selected messages will receive replies from scientists or the organizing committee."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "三楼",
+            "en": "3F"
+          },
+          "x": 91.8,
+          "y": 11.7,
+          "color": "#286B91",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "89",
+          "no": "89",
+          "category": 6,
+          "name": {
+            "zh": "螃蟹标本制作",
+            "en": "Crab Specimen Workshop"
+          },
+          "full": {
+            "zh": "趣玩滨海湿地红树林-螃蟹标本制作",
+            "en": "Mangrove Crab Specimen Preparation"
+          },
+          "intro": {
+            "zh": "以红树林滩涂中的招潮蟹、相手蟹等底栖螃蟹为对象，认识螃蟹的特征、洞穴生活与生态作用。",
+            "en": "Study fiddler crabs, sesarmid crabs, and other burrowing species from mangrove mudflats, including their morphology, burrow life, and ecological roles."
+          },
+          "space": {
+            "zh": "金泉楼A201",
+            "en": "Jinquan Building A201"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 78.6,
+          "y": 55,
+          "color": "#F88431",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "90",
+          "no": "90",
+          "category": 6,
+          "name": {
+            "zh": "青少年科创作品展示",
+            "en": "Youth STEM Projects Showcase"
+          },
+          "full": {
+            "zh": "滤浊水·淡咸水·创未来（青少年科创作品展示）",
+            "en": "From Muddy Water to Fresh Water: Creating the Future (Youth STEM Projects Showcase)"
+          },
+          "intro": {
+            "zh": "通过“看得见、摸得着、做得到”的简易装置，揭示从“去除杂质”到“去除盐分”的科学进阶逻辑。",
+            "en": "Use simple, visible devices to follow the scientific progression from removing particles to removing dissolved salts."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 88,
+          "y": 55,
+          "color": "#F88431",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "91",
+          "no": "91",
+          "category": 6,
+          "name": {
+            "zh": "【主题展览】青少年科学笔记",
+            "en": "Young Scientists’ Notebooks"
+          },
+          "full": {
+            "zh": "【主题展览】青少年科学笔记",
+            "en": "Young Scientists’ Notebook Exhibition"
+          },
+          "intro": {
+            "zh": "让青少年从“倾听者”转化为“创造者”和“表达者”，透过无声的作品看到海洋科普×青少年培养背后的意义。",
+            "en": "See how young people move from listening to creating and communicating through their science notebooks, revealing the value of ocean outreach and youth development."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 69.2,
+          "y": 50.9,
+          "color": "#F88431",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "92",
+          "no": "92",
+          "category": 6,
+          "name": {
+            "zh": "青少年海洋分享家",
+            "en": "Young Ocean Ambassadors"
+          },
+          "full": {
+            "zh": "海洋分享家——互动体验微讲座",
+            "en": "Ocean Ambassadors: Interactive Mini-Lectures"
+          },
+          "intro": {
+            "zh": "依托海洋为生——海洋小小旅行家、海底的“慢吞吞吸尘器”、潜水运动与全球潜水胜地分享、海底的定时炸弹——为什么海水浇不灭海底火山、方寸阅海战——邮票上的海疆故事，共5场“微讲座”分享。",
+            "en": "Join five short talks: “Making a Living from the Ocean: A Little Ocean Traveler,” “The Seafloor’s Slow-Moving Vacuum Cleaner,” “Diving and the World’s Great Dive Destinations,” “Time Bombs on the Seafloor: Why Seawater Cannot Extinguish Underwater Volcanoes,” and “A Naval History in Stamps.”"
+          },
+          "space": {
+            "zh": "金泉楼B206",
+            "en": "Jinquan Building B206"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 91.8,
+          "y": 50.9,
+          "color": "#F88431",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "93",
+          "no": "93",
+          "category": 5,
+          "name": {
+            "zh": "海马齿生态修复",
+            "en": "Sea Purslane Ecological Restoration"
+          },
+          "full": {
+            "zh": "生态浮床——水上园艺师",
+            "en": "Eco-Floating Bed: Water Gardeners"
+          },
+          "intro": {
+            "zh": "仿生设计生态浮床，了解海马齿等耐盐草本植物在近岸区域的生态净化与生境恢复功能。",
+            "en": "Explore biomimetic floating beds and learn how salt-tolerant plants such as sea purslane help purify coastal water and restore habitats."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 69.2,
+          "y": 45,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "94",
+          "no": "94",
+          "category": 5,
+          "name": {
+            "zh": "海洋保护与利用",
+            "en": "Marine Conservation & Use"
+          },
+          "full": {
+            "zh": "海洋保护与利用主题系列活动",
+            "en": "Marine Conservation and Sustainable Use"
+          },
+          "intro": {
+            "zh": "传递海洋生物、海滩防护、减塑护海等基础海洋保护知识，传达善待海洋生物的科普理念。",
+            "en": "Learn the fundamentals of marine conservation, from protecting marine life and beaches to reducing plastic waste, and discover practical ways to treat the ocean and its inhabitants with care."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 91.8,
+          "y": 47.5,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "100",
+          "no": "100",
+          "category": 10,
+          "name": {
+            "zh": "（游戏）食物链 “行为密码”",
+            "en": "Ocean Food Web “Behavior Code”"
+          },
+          "full": {
+            "zh": "（游戏专区）海洋食物链“行为密码”大挑战",
+            "en": "Game Zone: Ocean Food Web Behavior Challenge"
+          },
+          "intro": {
+            "zh": "通过动物卡和行为卡进行趣味配对，将海洋生物放到正确的食物链位置，寻找它们独特的生存本领。",
+            "en": "Match animal and behavior cards, place marine organisms in the correct food-web positions, and discover their unique survival skills."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 91.8,
+          "y": 40.8,
+          "color": "#000000",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "101",
+          "no": "101",
+          "category": 5,
+          "name": {
+            "zh": "海洋化学元素剧本杀",
+            "en": "Ocean Chemical Elements Mystery"
+          },
+          "full": {
+            "zh": "海洋化学元素剧本杀-1：《青屿湾2012》",
+            "en": "Ocean Chemical Elements Mystery: Qingyu Bay 2012, Part 1"
+          },
+          "intro": {
+            "zh": "沉浸式主题剧本杀邀你入局，谁能成为继碳长老之后的下一届“元素主席”？缜密、烧脑、竞拍、交易，怎样才能写出“海的结局”？",
+            "en": "Enter an immersive mystery game, compete to become the next “Element Chair,” and negotiate, bid, and trade your way toward the ocean’s ending."
+          },
+          "space": {
+            "zh": "金泉楼B203",
+            "en": "Jinquan Building B203"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 91.8,
+          "y": 44.1,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "83",
+          "no": "83",
+          "category": 10,
+          "name": {
+            "zh": "（游戏）潮间带生存模拟",
+            "en": "Intertidal Survival Challenge"
+          },
+          "full": {
+            "zh": "（游戏专区）潮间带模拟生存游戏",
+            "en": "Game Zone: Intertidal Survival Simulation"
+          },
+          "intro": {
+            "zh": "模拟一只“螃蟹”，在环境剧变中做出生存抉择，感受生物适应的艰难历程，深刻理解生态平衡的珍贵与脆弱。",
+            "en": "Play as a crab making life-or-death choices in a changing environment and experience how difficult adaptation can be and how fragile ecological balance is."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 41,
+          "y": 86.6,
+          "color": "#000000",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
+          "id": "84",
+          "no": "84",
+          "category": 6,
+          "name": {
+            "zh": "水下机器人",
+            "en": "Underwater Robots"
+          },
+          "full": {
+            "zh": "水下机器人营救海洋生物",
+            "en": "Underwater Robot Rescue Mission"
+          },
+          "intro": {
+            "zh": "模拟国际“海鲈鱼”赛事任务，精准通过障碍，完成海洋生物的救援。",
+            "en": "Take on a simulated international sea-perch robotics challenge by navigating obstacles and completing a marine-life rescue mission."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 63,
+          "y": 86.6,
+          "color": "#F88431",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "85",
+          "no": "85",
+          "category": 5,
+          "name": {
+            "zh": "水质监测",
+            "en": "Water-Quality Monitoring"
+          },
+          "full": {
+            "zh": "水质监测：给河流湖库做“体检”",
+            "en": "Water-Quality Monitoring: A Health Check for Rivers and Reservoirs"
+          },
+          "intro": {
+            "zh": "了解核心水质监测指标，为水库河流建立“健康诊断书”。",
+            "en": "Learn the key indicators used to assess water quality and create a “health report” for rivers and reservoirs."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 44.2,
+          "y": 81.1,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "86",
+          "no": "86",
+          "category": 5,
+          "name": {
+            "zh": "蓝碳监测",
+            "en": "Blue Carbon Monitoring"
+          },
+          "full": {
+            "zh": "看见红树林的“呼吸”——走进下潭尾蓝碳监测",
+            "en": "Seeing Mangroves Breathe: Blue Carbon Monitoring in Xiatanwei"
+          },
+          "intro": {
+            "zh": "展示科研人员如何监测和评估红树林碳汇，再用触摸屏让观众亲手转动VR全景，“走进”厦门下潭尾红树林。",
+            "en": "See how scientists monitor and assess mangrove carbon storage, then use a touchscreen and VR panorama to visit the Xiatanwei mangroves."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 50.4,
+          "y": 79.7,
+          "color": "#88CC92",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "87",
+          "no": "87",
+          "category": 6,
+          "name": {
+            "zh": "红树林知识问答",
+            "en": "Mangrove Quiz"
+          },
+          "full": {
+            "zh": "趣玩滨海湿地红树林-红树林知识问答",
+            "en": "Mangrove Knowledge Quiz"
+          },
+          "intro": {
+            "zh": "认识“海岸卫士”和“海洋绿肺”，增强守护滨海湿地与红树林生态的意识。",
+            "en": "Meet the “coastal guardians” and “green lungs of the sea,” and learn why coastal wetlands and mangroves need protection."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 56.7,
+          "y": 81.1,
+          "color": "#F88431",
+          "textColor": "#111D28",
+          "items": []
+        },
+        {
+          "id": "88",
+          "no": "88",
+          "category": 6,
+          "name": {
+            "zh": "蓝碳飞行棋",
+            "en": "Blue Carbon Board Game"
+          },
+          "full": {
+            "zh": "趣玩滨海湿地红树林-蓝碳飞行棋",
+            "en": "Blue Carbon Board Game"
+          },
+          "intro": {
+            "zh": "在掷骰子、走格子的互动中认识“海岸卫士”的生态价值，轻松掌握蓝碳奥秘，在游戏中树立守护滨海湿地的环保意识。",
+            "en": "Roll the dice and move around the board to discover the ecological value of coastal wetlands and the science of blue carbon."
+          },
+          "space": {
+            "zh": "",
+            "en": ""
+          },
+          "floor": {
+            "zh": "一楼",
+            "en": "1F"
+          },
+          "x": 50.4,
+          "y": 86.6,
+          "color": "#F88431",
+          "textColor": "#111D28",
+          "items": []
+        }
+      ]
+    }
+  ]
+}
