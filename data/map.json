@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T10:28:43.476Z",
+  "generatedAt": "2026-11-12T05:08:37.082Z",
   "eventDate": "2026-11-14",
   "title": {
     "zh": "海洋科学开放日",
@@ -74,7 +74,122 @@
   ],
   "buildings": [
     {
+      "key": "campus",
+      "dimensions": [
+        845,
+        590
+      ],
+      "securityPosts": [
+        {
+          "id": "security-jq-east",
+          "x": 67.3,
+          "y": 47.7
+        },
+        {
+          "id": "security-jq-south",
+          "x": 62.7,
+          "y": 52
+        },
+        {
+          "id": "security-zlq-north",
+          "x": 62.1,
+          "y": 60.4
+        },
+        {
+          "id": "security-zlq-east",
+          "x": 67.6,
+          "y": 62.7
+        },
+        {
+          "id": "security-xp-west",
+          "x": 72.7,
+          "y": 63.3
+        },
+        {
+          "id": "security-zlq-south",
+          "x": 63.2,
+          "y": 68
+        }
+      ],
+      "facilities": [],
+      "campusHotspots": [
+        {
+          "key": "jq",
+          "label": "金泉楼",
+          "labelEn": "Jinquan Building",
+          "x": 56.5,
+          "y": 38.5,
+          "w": 11.7,
+          "h": 12.7
+        },
+        {
+          "key": "zlq",
+          "label": "周隆泉楼",
+          "labelEn": "Zhou Longquan Building",
+          "x": 51.2,
+          "y": 55.6,
+          "w": 14.8,
+          "h": 11.4
+        },
+        {
+          "key": "xp",
+          "label": "希平楼",
+          "labelEn": "Xiping Building",
+          "x": 70.5,
+          "y": 56,
+          "w": 13.7,
+          "h": 17.2
+        }
+      ],
+      "name": {
+        "zh": "校园地图",
+        "en": "Campus Map"
+      },
+      "shortName": {
+        "zh": "校园地图",
+        "en": "Campus Map"
+      },
+      "image": {
+        "zh": "assets/map/ov_campus.jpg",
+        "en": "assets/map/ov_campus_en.jpg"
+      },
+      "floors": [],
+      "categories": [],
+      "points": []
+    },
+    {
       "key": "zlq",
+      "dimensions": [
+        800,
+        1544
+      ],
+      "securityPosts": [
+        {
+          "id": "security-zlq-1f-corridor",
+          "x": 49.52,
+          "y": 76.68
+        },
+        {
+          "id": "security-zlq-1f-east",
+          "x": 86.07,
+          "y": 80.83
+        },
+        {
+          "id": "security-zlq-1f-south",
+          "x": 53.79,
+          "y": 86.05
+        }
+      ],
+      "facilities": [
+        {
+          "id": "temporary-medical-room",
+          "type": "medical",
+          "x": 24.5,
+          "y": 85.2,
+          "label": "临时医疗室"
+        }
+      ],
+      "campusHotspots": [],
       "name": {
         "zh": "周隆泉楼",
         "en": "Zhou Longquan Building"
@@ -972,6 +1087,36 @@
           "items": []
         },
         {
+          "id": "s_科学家讲座",
+          "no": "s_科学家讲座",
+          "category": -1,
+          "name": {
+            "zh": "科学家讲座",
+            "en": "Scientist Talks"
+          },
+          "full": {
+            "zh": "科学家讲座",
+            "en": "Scientist Talks"
+          },
+          "intro": {
+            "zh": "邀请科研人员走上讲台，亲述一线科研现场的精彩故事，展现海洋科学“生地化物”各领域的魅力，刷新您对浩瀚深蓝的认知！",
+            "en": "Researchers share stories from the front lines of science across biology, geology, chemistry, and physics, offering fresh perspectives on the deep blue."
+          },
+          "space": {
+            "zh": "周隆泉楼二层咖啡厅",
+            "en": "Zhou Longquan Building 2FCafe"
+          },
+          "floor": {
+            "zh": "二楼",
+            "en": "2F"
+          },
+          "x": 49.8,
+          "y": 58.8,
+          "color": "#8C7A9E",
+          "textColor": "#FFFFFF",
+          "items": []
+        },
+        {
           "id": "1",
           "no": "1",
           "category": 0,
@@ -1365,6 +1510,19 @@
     },
     {
       "key": "xp",
+      "dimensions": [
+        800,
+        1391
+      ],
+      "securityPosts": [
+        {
+          "id": "security-xp-1f-south",
+          "x": 60.33,
+          "y": 84.76
+        }
+      ],
+      "facilities": [],
+      "campusHotspots": [],
       "name": {
         "zh": "希平楼",
         "en": "Xiping Building"
@@ -2607,6 +2765,24 @@
     },
     {
       "key": "jq",
+      "dimensions": [
+        800,
+        1520
+      ],
+      "securityPosts": [
+        {
+          "id": "security-jq-1f-east",
+          "x": 84.55,
+          "y": 73.68
+        },
+        {
+          "id": "security-jq-1f-south",
+          "x": 47.03,
+          "y": 84.14
+        }
+      ],
+      "facilities": [],
+      "campusHotspots": [],
       "name": {
         "zh": "金泉楼",
         "en": "Jinquan Building"

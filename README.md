@@ -4,11 +4,14 @@
 
 - 在线地图：<https://brian-jiangz.github.io/marine-open-day-map/>
 - GitHub 仓库：<https://github.com/Brian-jiangz/marine-open-day-map>
-- 周隆泉楼、希平楼、金泉楼三栋场馆地图
-- 101 个可点击点位及分组点位详情
+- 校园总览及周隆泉楼、希平楼、金泉楼三栋场馆地图
+- 102 个可点击点位及分组点位详情
 - 编号、名称、楼层、篇章大类搜索
 - 地图滚轮/双击/双指缩放、拖动浏览、全屏模式和点位自动居中
-- 手机端可展开点位目录抽屉，桌面端固定右侧目录栏
+- 与小程序独立公众地图 `pages/map-view/map-view` 对齐的浅蓝页头、吸顶搜索与切楼、纵向地图和卡片布局
+- 校园与楼栋共 12 处安保标记、临时医疗室标记
+- 音乐盲盒：共享原始活动内容与时间规则，仅在当前页面内开启
+- 地图下方的篇章大类筛选与可展开点位目录
 - 中文 / English 切换
 - 关怀版大字号与大触区
 - 手机深链：`?building=xp&spot=43&lang=zh`
@@ -37,7 +40,7 @@ npm run serve
 MINIPROGRAM_ROOT=/path/to/volunteer-miniprogram/miniprogram npm run build:data
 ```
 
-生成文件为 `data/map.json`，同时复制 6 张中英文单楼总览图到 `assets/map/`。
+生成文件为 `data/map.json`，同时复制 8 张中英文校园与单楼总览图到 `assets/map/`。
 
 ## 二维码
 
@@ -63,4 +66,8 @@ QR_URL=https://example.com/path/ npm run build:qr
 npm run test:e2e
 ```
 
-使用本机 Google Chrome 对手机与桌面视口进行渲染、搜索、楼栋切换、详情弹窗、中英文和关怀版回归。
+使用本机 Google Chrome 对 320 / 390 / 768 / 1280px 视口进行渲染、搜索、楼栋切换、安保与医疗标记、分类筛选、地图全屏与拖动、详情弹窗、中英文和关怀版回归，并检查音乐盲盒时序、二维码和点位深链。
+
+所有浏览偏好及盲盒开启状态仅保留在当前页面内存；网页只读取随站点发布的公共资源，不接入小程序身份、留言、点赞、报名或统计写入。未接入的后台统计不显示。
+
+校园高清图优先从小程序项目的 `docs/campus-map-20261112/` 读取，可用 `CAMPUS_MAP_ASSET_ROOT` 指定目录；不存在时使用包内校园图。已生成的 `data/map.json`、`music.js` 和图片均纳入仓库，线上运行不依赖小程序项目。

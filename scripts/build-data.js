@@ -9,11 +9,15 @@ const sourceRoot = path.resolve(
   process.env.MINIPROGRAM_ROOT || path.join(root, '..', 'volunteer-miniprogram', 'miniprogram'),
 );
 const sourceData = path.join(sourceRoot, 'data');
+const campusAssetRoot = process.env.CAMPUS_MAP_ASSET_ROOT || path.join(sourceRoot, '..', 'docs', 'campus-map-20261112');
 
 const mapData = require(path.join(sourceData, 'map-data'));
 const mapCoords = require(path.join(sourceData, 'map-coords'));
 const mapFulls = require(path.join(sourceData, 'map-fulls'));
 const mapEn = require(path.join(sourceData, 'map-en'));
+const music = require(path.join(sourceData, 'music-blind-boxes'));
+const config = require(path.join(sourceRoot, 'config/index'));
+const dimensions = { campus: [845, 590], zlq: [800, 1544], xp: [800, 1391], jq: [800, 1520] };
 
 const FLOOR_ORDER = {
   '五楼': 5,
@@ -64,6 +68,7 @@ function buildBuilding(building) {
           intro: { zh: item.intro || '', en: itemEn.i || item.intro || '' },
         };
       });
+      if (points.some(point => point.id === spot.id)) continue;
       points.push({
         id: spot.id,
         no: spot.no || spot.id,
@@ -108,6 +113,10 @@ function buildBuilding(building) {
 
   return {
     key: building.key,
+    dimensions: dimensions[building.key],
+    securityPosts: building.securityPosts || mapData.BUILDING_SECURITY_POSTS[building.key] || [],
+    facilities: mapData.OVERVIEW_FACILITIES[building.key] || [],
+    campusHotspots: building.campusHotspots || [],
     name: { zh: building.name, en: mapEn.BUILDINGS[building.key] || building.en },
     shortName: {
       zh: building.name.replace(/楼$/, ''),
@@ -136,7 +145,7 @@ if (missing.length) {
 
 const output = {
   generatedAt: new Date().toISOString(),
-  eventDate: '2026-11-14',
+  eventDate: config.eventDate,
   title: {
     zh: '海洋科学开放日',
     en: 'Marine Science Open Day',
@@ -160,12 +169,29 @@ fs.writeFileSync(
 for (const building of mapData.BUILDINGS) {
   for (const suffix of ['', '_en']) {
     const file = `ov_${building.key}${suffix}.jpg`;
+    const hd = path.join(campusAssetRoot, file);
     fs.copyFileSync(
-      path.join(sourceRoot, 'assets', 'map', file),
+      building.key === 'campus' && fs.existsSync(hd) ? hd : path.join(sourceRoot, 'assets', 'map', file),
       path.join(root, 'assets', 'map', file),
     );
   }
 }
+
+fs.copyFileSync(path.join(sourceRoot, 'assets/security-shield.svg'), path.join(root, 'assets/security-shield.svg'));
+// Share the original timing rules without importing mini-program services or configuration.
+const musicSource = fs.readFileSync(path.join(sourceData, 'music-blind-boxes.js'), 'utf8');
+const statusStart = musicSource.indexOf('const STATUS =');
+const rulesStart = musicSource.indexOf('const SOON_LEAD_MS');
+const boxesStart = musicSource.indexOf('const BOXES');
+const exportLine = 'module.exports = { BOXES, STATUS, buildBoxViews, boxTimes };';
+if (statusStart < 0 || rulesStart < 0 || boxesStart < rulesStart || !musicSource.includes(exportLine)) {
+  throw new Error('Music data source changed; review its browser export before building.');
+}
+const functions = musicSource.slice(statusStart).replace(exportLine, 'export { buildBoxViews };');
+fs.writeFileSync(path.join(root, 'music.js'),
+  'const BOXES = ' + JSON.stringify(music.BOXES, null, 2) + ';\n'
+  + musicSource.slice(rulesStart, boxesStart) + functions);
+
 
 console.log(JSON.stringify({
   buildings: buildings.length,

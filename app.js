@@ -1,7 +1,4 @@
-const STORAGE = {
-  locale: 'marine-map-locale',
-  care: 'marine-map-care',
-};
+import { buildBoxViews } from './music.js?v=20261112-map-view';
 
 const I18N = {
   zh: {
@@ -9,11 +6,15 @@ const I18N = {
     pageTitle: '2026 海洋科学开放日 · 场馆地图',
     siteTitle: '海洋科学开放日',
     siteSubtitle: '场馆地图与参观指引',
-    careShort: '关怀',
-    standardShort: '标准',
-    points: '点位',
-    mapHint: '拖动地图，点击编号查看详情',
-    directory: '点位目录',
+    careShort: '关怀版',
+    safety: '安全保障 · 安保值班室',
+    music: '音乐盲盒',
+    openMusic: '开启盲盒',
+    safetyNote: '请遵循现场工作人员与志愿者指引，注意脚下安全。',
+    standardShort: '标准版',
+    points: '点位目录',
+    mapHint: '点击地图空白处放大查看',
+    directory: '篇章大类',
     showAll: '显示全部',
     pointUnit: '个点位',
     noResults: '没有找到匹配点位',
@@ -34,11 +35,15 @@ const I18N = {
     pageTitle: '2026 Marine Science Open Day · Venue Map',
     siteTitle: 'Marine Science Open Day',
     siteSubtitle: 'Venue map and visitor guide',
-    careShort: 'Care',
-    standardShort: 'Std',
+    careShort: 'Large text',
+    safety: 'Safety & Security · Security Duty Room',
+    music: 'Mystery Music Boxes',
+    openMusic: 'Open music box',
+    safetyNote: 'Follow staff guidance and watch your step.',
+    standardShort: 'Standard',
     points: 'Points',
-    mapHint: 'Drag the map, then tap a number for details',
-    directory: 'Locations',
+    mapHint: 'Tap a blank area of the map to zoom',
+    directory: 'Explore by theme',
     showAll: 'Show all',
     pointUnit: 'locations',
     noResults: 'No matching locations',
@@ -58,8 +63,8 @@ const I18N = {
 
 const state = {
   data: null,
-  locale: localStorage.getItem(STORAGE.locale) === 'en' ? 'en' : 'zh',
-  care: localStorage.getItem(STORAGE.care) === '1',
+  locale: 'zh',
+  care: false,
   buildingKey: '',
   category: -1,
   searchDismissed: false,
@@ -68,6 +73,9 @@ const state = {
   pendingFocusId: '',
   pendingOpen: false,
   fullscreen: false,
+  openedMusic: [],
+  musicId: '',
+  musicSignature: '',
 };
 
 const mapState = {
@@ -187,7 +195,7 @@ function applyStaticLanguage() {
     if (dict[key]) node.textContent = dict[key];
   });
   elements.searchInput.placeholder = state.locale === 'zh'
-    ? '搜索编号、名称、楼层或大类'
+    ? '搜索点位编号、名称或楼层'
     : 'Search number, name, floor, or theme';
   elements.searchInput.setAttribute('aria-label', state.locale === 'zh' ? '搜索点位' : 'Search locations');
   elements.clearSearch.setAttribute('aria-label', state.locale === 'zh' ? '清除搜索' : 'Clear search');
@@ -208,18 +216,19 @@ function renderCareButton() {
 function setCareMode(enabled) {
   state.care = !!enabled;
   elements.body.classList.toggle('care-mode', state.care);
-  localStorage.setItem(STORAGE.care, state.care ? '1' : '0');
+  requestAnimationFrame(setupMapStage);
   renderCareButton();
 }
 
 function setLocale(locale) {
   state.locale = locale === 'en' ? 'en' : 'zh';
-  localStorage.setItem(STORAGE.locale, state.locale);
+  state.musicSignature = '';
   applyStaticLanguage();
   renderBuildingTabs();
   renderMap();
   renderDirectory();
   updateSearchResults();
+  renderMusic();
   if (elements.spotDialog.open && state.activePoint) {
     fillPointDialog(state.activePoint, { updateUrl: false, moveFocus: false });
   }
@@ -234,7 +243,7 @@ function renderBuildingTabs() {
     button.dataset.building = building.key;
     button.setAttribute('aria-selected', String(building.key === state.buildingKey));
     button.setAttribute('role', 'tab');
-    button.textContent = building.shortName[state.locale];
+    button.textContent = building.name[state.locale];
     button.addEventListener('click', () => selectBuilding(building.key));
     return button;
   }));
@@ -242,7 +251,13 @@ function renderBuildingTabs() {
 
 function selectBuilding(key, options = {}) {
   if (!state.data.buildings.some((building) => building.key === key)) return;
+  if (state.fullscreen) toggleFullscreen();
   state.buildingKey = key;
+  elements.searchInput.value = '';
+  updateSearchResults();
+  closeDialog({ clearUrl: false });
+  closeDrawer();
+  state.musicSignature = '';
   state.category = -1;
   state.pendingFocusId = options.focusPoint ? options.focusPoint.id : '';
   state.pendingOpen = !!options.openPoint;
@@ -257,11 +272,15 @@ function renderMap() {
   elements.buildingKicker.textContent = building.name.en.toUpperCase();
   elements.buildingTitle.textContent = building.name[state.locale];
   elements.pointCount.textContent = String(building.points.length);
+  elements.pointsToggle.hidden = !building.points.length;
   elements.mapImage.alt = state.locale === 'zh'
     ? `${building.name.zh}开放日点位地图`
     : `${building.name.en} open-day location map`;
   renderHotspots();
 
+  elements.mapViewport.style.aspectRatio = building.dimensions.join(' / ');
+  document.getElementById('safetyLegend').hidden = !building.securityPosts.length;
+  renderMusic();
   const src = building.image[state.locale];
   const finish = () => {
     if (elements.mapImage.getAttribute('src') !== src) return;
@@ -281,6 +300,7 @@ function renderHotspots() {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'map-hotspot';
+    if (point.id === '63' || point.id === '64') button.classList.add('label-fix');
     if (point.category === state.category) button.classList.add('is-match');
     button.style.left = `${point.x}%`;
     button.style.top = `${point.y}%`;
@@ -295,11 +315,109 @@ function renderHotspots() {
     button.addEventListener('pointerdown', (event) => event.stopPropagation());
     button.addEventListener('click', (event) => {
       event.stopPropagation();
-      centerPoint(point, Math.max(mapState.zoom, 2));
+      if (mapState.dragged) return;
       fillPointDialog(point);
     });
     return button;
   }));
+  renderMapExtras();
+}
+
+// All visitor state stays in memory. Only bundled public map resources are read.
+function renderMapExtras() {
+  const building = currentBuilding();
+  elements.mapHotspots.querySelectorAll('.map-extra').forEach(node => node.remove());
+  for (const hot of building.campusHotspots) {
+    const button = document.createElement('button');
+    button.type = 'button'; button.className = 'map-extra campus-hot';
+    Object.assign(button.style, { left: `${hot.x}%`, top: `${hot.y}%`, width: `${hot.w}%`, height: `${hot.h}%` });
+    button.setAttribute('aria-label', state.locale === 'zh' ? hot.label : hot.labelEn);
+    button.addEventListener('click', event => { event.stopPropagation(); selectBuilding(hot.key); });
+    elements.mapHotspots.append(button);
+  }
+  for (const post of building.securityPosts) {
+    const img = document.createElement('img');
+    img.className = 'map-extra security-post'; img.src = 'assets/security-shield.svg'; img.alt = t('safety');
+    img.style.left = `${post.x}%`; img.style.top = `${post.y}%`;
+    elements.mapHotspots.append(img);
+  }
+  for (const facility of building.facilities) {
+    const marker = document.createElement('div'); marker.className = 'map-extra medical';
+    marker.style.left = `${facility.x}%`; marker.style.top = `${facility.y}%`;
+    const label = document.createElement('span'); label.textContent = state.locale === 'zh' ? facility.label : 'First Aid Room';
+    const cross = document.createElement('b'); cross.textContent = '✚';
+    marker.append(label, cross); elements.mapHotspots.append(marker);
+  }
+  renderMusicMarkers();
+}
+
+function musicViews() { return buildBoxViews(Date.now(), state.openedMusic, state.locale === 'en'); }
+
+function renderMusicMarkers() {
+  elements.mapHotspots.querySelectorAll('.music-marker').forEach(node => node.remove());
+  for (const box of musicViews().filter(box => box.bKey === state.buildingKey && box.phase !== 'sealed')) {
+    const marker = document.createElement('button'); marker.type = 'button';
+    marker.className = `music-marker ${box.showMapWave ? 'wave' : ''}`;
+    marker.style.left = `${box.marker.x}%`; marker.style.top = `${box.marker.y}%`; marker.style.background = box.accent;
+    marker.textContent = box.showMapMarker ? box.mapMarkerText : '·';
+    marker.setAttribute('aria-label', box.mapAriaLabel);
+    marker.addEventListener('click', event => { event.stopPropagation(); showMusic(box.id); });
+    elements.mapHotspots.append(marker);
+  }
+}
+
+function renderMusic() {
+  const boxes = musicViews();
+  const signature = [state.locale, state.buildingKey, ...boxes.map(box => box.id + box.phase)].join('|');
+  if (signature !== state.musicSignature) {
+    state.musicSignature = signature;
+    document.getElementById('musicList').replaceChildren(...boxes.map(box => {
+      const row = document.createElement('button'); row.type = 'button'; row.className = 'music-card'; row.dataset.musicId = box.id;
+      const index = document.createElement('span'); index.className = 'music-index'; index.style.color = box.accent; index.textContent = `♪ ${box.index}`;
+      const copy = document.createElement('span'); copy.className = 'music-copy';
+      const title = document.createElement('span'); title.textContent = box.cardTitle;
+      const description = document.createElement('span'); description.className = 'meta'; description.textContent = box.revealed ? box.venue : box.clue;
+      const time = document.createElement('span'); time.className = 'meta'; time.textContent = box.timeText;
+      const phase = document.createElement('span'); phase.className = 'music-phase'; phase.textContent = box.phaseLabel;
+      copy.append(title, description, time); row.append(index, copy, phase);
+      row.addEventListener('click', () => showMusic(box.id)); return row;
+    }));
+    renderMusicMarkers();
+  }
+  if (document.getElementById('musicDialog').open) fillMusic();
+}
+
+function showMusic(id) {
+  state.musicId = id; fillMusic();
+  document.getElementById('musicDialog').showModal();
+}
+
+function fillMusic() {
+  const box = musicViews().find(box => box.id === state.musicId); if (!box) return;
+  document.getElementById('musicMeta').textContent = `BOX ${box.index} · ${box.phaseLabel}`;
+  document.getElementById('musicDetailTitle').textContent = box.cardTitle;
+  document.getElementById('musicDescription').textContent = box.revealed ? [box.venue, box.team].filter(Boolean).join('\n') : box.clue;
+  document.getElementById('musicTime').textContent = box.timeText;
+  document.getElementById('musicCountdown').textContent = ['soon', 'active'].includes(box.phase) ? `${box.countdownLabel} ${box.countdownText}` : '';
+  document.getElementById('musicOpen').hidden = !box.canOpen;
+  document.getElementById('musicLocate').hidden = !box.canLocate;
+}
+
+function attachMusicEvents() {
+  const dialog = document.getElementById('musicDialog');
+  document.getElementById('musicClose').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  document.getElementById('musicOpen').addEventListener('click', () => {
+    const box = musicViews().find(box => box.id === state.musicId); if (!box?.canOpen) return;
+    state.openedMusic.push(box.id); renderMusic();
+  });
+  document.getElementById('musicLocate').addEventListener('click', () => {
+    const box = musicViews().find(box => box.id === state.musicId); if (!box?.canLocate) return;
+    dialog.close(); selectBuilding(box.bKey);
+    const focus = () => { if (!state.fullscreen) toggleFullscreen(); requestAnimationFrame(() => centerPoint(box.marker, 2.5)); };
+    if (elements.mapImage.complete) focus();
+    else elements.mapImage.addEventListener('load', focus, { once: true });
+  });
 }
 
 function renderDirectory() {
@@ -307,7 +425,9 @@ function renderDirectory() {
   const points = building.points.filter((point) => state.category < 0 || point.category === state.category);
   elements.directoryCount.textContent = `${points.length} ${t('pointUnit')}`;
   elements.clearFilter.hidden = state.category < 0;
-  elements.categoryChips.replaceChildren(...building.categories.map((categoryIndex) => {
+  elements.directoryPane.classList.toggle('no-categories', !building.categories.length);
+  elements.directoryPane.classList.toggle('has-category', state.category >= 0);
+  elements.categoryChips.replaceChildren(...[-1, ...building.categories].map((categoryIndex) => {
     const category = currentCategory(categoryIndex);
     const button = document.createElement('button');
     button.type = 'button';
@@ -317,7 +437,8 @@ function renderDirectory() {
     dot.className = 'category-dot';
     dot.style.background = categoryColor(categoryIndex, building);
     const label = document.createElement('span');
-    label.textContent = category ? category[state.locale] : String(categoryIndex);
+    label.textContent = category ? category[state.locale] : (state.locale === 'zh' ? '全部' : 'All');
+    dot.hidden = categoryIndex < 0;
     button.append(dot, label);
     button.addEventListener('click', () => {
       state.category = state.category === categoryIndex ? -1 : categoryIndex;
@@ -376,7 +497,7 @@ function setupMapStage() {
   if (!width || !height || !viewport.width || !viewport.height) return;
   mapState.naturalWidth = width;
   mapState.naturalHeight = height;
-  const scale = Math.min(viewport.width / width, viewport.height / height) * 0.98;
+  const scale = Math.min(viewport.width / width, viewport.height / height);
   mapState.baseWidth = width * scale;
   mapState.baseHeight = height * scale;
   elements.mapStage.style.width = `${mapState.baseWidth}px`;
@@ -590,12 +711,14 @@ function closeDialog(options = {}) {
 }
 
 function openDrawer() {
-  elements.body.classList.add('drawer-open');
-  elements.pointsToggle.setAttribute('aria-expanded', 'true');
+  elements.body.classList.toggle('directory-expanded');
+  elements.pointsToggle.setAttribute('aria-expanded', String(elements.body.classList.contains('directory-expanded')));
+  if (elements.body.classList.contains('directory-expanded')) elements.directoryPane.scrollIntoView({ block: 'start', behavior: 'smooth' });
+
 }
 
 function closeDrawer() {
-  elements.body.classList.remove('drawer-open');
+  elements.body.classList.remove('directory-expanded');
   elements.pointsToggle.setAttribute('aria-expanded', 'false');
 }
 
@@ -614,6 +737,8 @@ function updateUrl(options = {}) {
 
 function readUrlState() {
   const params = new URLSearchParams(window.location.search);
+  state.care = params.get('care') === '1';
+  elements.body.classList.toggle('care-mode', state.care);
   if (params.get('lang') === 'en' || params.get('lang') === 'zh') {
     state.locale = params.get('lang');
   }
@@ -631,6 +756,7 @@ function readUrlState() {
 function toggleFullscreen() {
   state.fullscreen = !state.fullscreen;
   elements.mapViewport.classList.toggle('is-fullscreen', state.fullscreen);
+  elements.fullscreenButton.querySelector('use').setAttribute('href', state.fullscreen ? '#i-close' : '#i-expand');
   elements.body.classList.toggle('map-fullscreen', state.fullscreen);
   elements.fullscreenButton.setAttribute('aria-label', state.fullscreen ? t('exitFullscreen') : t('fullscreen'));
   requestAnimationFrame(() => {
@@ -641,12 +767,15 @@ function toggleFullscreen() {
 
 function attachMapGestures() {
   elements.mapViewport.addEventListener('wheel', (event) => {
+    if (!state.fullscreen && !event.ctrlKey) return;
     event.preventDefault();
     const factor = event.deltaY < 0 ? 1.12 : 0.89;
     setZoom(mapState.zoom * factor);
   }, { passive: false });
 
   elements.mapViewport.addEventListener('pointerdown', (event) => {
+    if (!state.fullscreen && event.pointerType === 'touch') return;
+    if (event.target.closest('.campus-hot, .music-marker')) return;
     if (event.target.closest('.zoom-controls, .points-toggle, .map-title-chip, .map-status')) return;
     if (event.button !== undefined && event.button !== 0) return;
     mapState.pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
@@ -698,6 +827,9 @@ function attachMapGestures() {
   elements.mapViewport.addEventListener('pointerup', finishPointer);
   elements.mapViewport.addEventListener('pointercancel', finishPointer);
 
+  elements.mapViewport.addEventListener('click', event => {
+    if (!event.target.closest('button') && !mapState.dragged && !state.fullscreen) toggleFullscreen();
+  });
   elements.mapViewport.addEventListener('dblclick', () => {
     setZoom(mapState.zoom > 1.2 ? 1 : 2);
   });
@@ -730,7 +862,10 @@ function attachEvents() {
     renderHotspots();
     renderDirectory();
   });
-  elements.zoomIn.addEventListener('click', () => setZoom(mapState.zoom * 1.25));
+  elements.zoomIn.addEventListener('click', () => {
+    if (!state.fullscreen) { toggleFullscreen(); requestAnimationFrame(() => setZoom(1.5)); }
+    else setZoom(mapState.zoom * 1.25);
+  });
   elements.zoomOut.addEventListener('click', () => setZoom(mapState.zoom / 1.25));
   elements.zoomReset.addEventListener('click', resetMapView);
   elements.fullscreenButton.addEventListener('click', toggleFullscreen);
@@ -747,6 +882,7 @@ function attachEvents() {
     if (!point) return;
     closeDialog({ clearUrl: false });
     closeDrawer();
+    if (!state.fullscreen) toggleFullscreen();
     requestAnimationFrame(() => centerPoint(point, 2.5));
   });
   document.addEventListener('keydown', (event) => {
@@ -768,6 +904,9 @@ async function init() {
     renderBuildingTabs();
     renderDirectory();
     renderMap();
+    document.getElementById('eventDate').textContent = `2026 · ${state.data.eventDate}`;
+    attachMusicEvents();
+    setInterval(() => { if (!document.hidden) renderMusic(); }, 1000);
   } catch (error) {
     console.error(error);
     showToast(t('loadFailed'));

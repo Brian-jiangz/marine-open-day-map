@@ -10,7 +10,7 @@
   <meta property="og:image" content="assets/map/ov_zlq.jpg">
   <title>2026 海洋科学开放日 · 场馆地图</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261112-map-view">
 </head>
 <body>
   <svg class="icon-sprite" aria-hidden="true">
@@ -28,20 +28,13 @@
   </svg>
 
   <header class="app-header">
-    <a class="brand-lockup" href="./" aria-label="地图首页">
-      <span class="brand-mark">MEL</span>
-      <span class="brand-copy">
-        <strong data-i18n="siteTitle">海洋科学开放日</strong>
-        <small data-i18n="siteSubtitle">场馆地图与参观指引</small>
-      </span>
-    </a>
     <div class="header-actions">
       <button class="tool-button lang-button" id="languageButton" type="button">EN</button>
-      <button class="tool-button care-button" id="careButton" type="button" aria-pressed="false">
-        <svg class="icon" aria-hidden="true"><use href="#i-accessibility"></use></svg>
-        <span data-i18n="careShort">关怀</span>
-      </button>
+      <button class="tool-button care-button" id="careButton" type="button" aria-pressed="false"><span>关怀版</span></button>
     </div>
+    <div class="event-date" id="eventDate">2026 · 2026-11-14</div>
+    <h1 data-i18n="siteTitle">海洋科学开放日</h1>
+    <p data-i18n="siteSubtitle">场馆地图与参观指引</p>
   </header>
 
   <main class="map-app">
@@ -65,17 +58,7 @@
           <div class="map-hotspots" id="mapHotspots"></div>
         </div>
 
-        <div class="map-title-chip">
-          <span class="map-kicker" id="buildingKicker">ZHOU LONGQUAN</span>
-          <strong id="buildingTitle">周隆泉楼</strong>
-        </div>
-
-        <button class="points-toggle" id="pointsToggle" type="button">
-          <svg class="icon" aria-hidden="true"><use href="#i-list"></use></svg>
-          <span data-i18n="points">点位</span>
-          <b id="pointCount">40</b>
-        </button>
-
+        <div class="map-title-chip" hidden><span id="buildingKicker"></span><strong id="buildingTitle"></strong></div>
         <div class="zoom-controls" aria-label="地图缩放">
           <button id="zoomIn" type="button" aria-label="放大">
             <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
@@ -91,19 +74,16 @@
           </button>
         </div>
 
-        <div class="map-status" id="mapStatus" aria-live="polite">
-          <span class="status-dot"></span>
-          <span data-i18n="mapHint">拖动地图，点击编号查看详情</span>
-        </div>
       </div>
-
-      <button class="drawer-backdrop" id="drawerBackdrop" type="button" aria-label="关闭点位列表"></button>
-
+      <div class="safety-legend" id="safetyLegend"><img src="assets/security-shield.svg" alt=""><span data-i18n="safety">安全保障 · 安保值班室</span></div>
+      <p class="map-status" id="mapStatus"><span data-i18n="mapHint">点击地图空白处放大查看</span></p>
+      <button class="points-toggle" id="pointsToggle" type="button" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-list"></use></svg><span data-i18n="points">点位目录</span><b id="pointCount">0</b></button>
+      <button id="drawerBackdrop" hidden type="button" aria-label="关闭点位列表"></button>
       <aside class="directory-pane" id="directoryPane" aria-labelledby="directoryTitle">
         <div class="directory-head">
           <div>
-            <span class="directory-kicker">DIRECTORY</span>
-            <h2 id="directoryTitle" data-i18n="directory">点位目录</h2>
+            <span class="directory-kicker"></span>
+            <h2 id="directoryTitle" data-i18n="directory">篇章大类</h2>
           </div>
           <button class="drawer-close" id="drawerClose" type="button" aria-label="关闭点位列表">
             <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
@@ -115,12 +95,14 @@
         </div>
         <div class="category-chips" id="categoryChips"></div>
         <div class="point-list" id="pointList"></div>
-        <footer class="site-footer">
+      </aside>
+      <section class="music-section card" aria-labelledby="musicTitle"><h2 id="musicTitle" data-i18n="music">音乐盲盒</h2><div id="musicList"></div></section>
+      <p class="safety-note" data-i18n="safetyNote">请遵循现场工作人员与志愿者指引，注意脚下安全。</p>
+      <footer class="site-footer">
           <strong data-i18n="org">海洋科普开放日组委会</strong>
           <span data-i18n="credits">开发：姜正 · 柴扉教授课题组</span>
           <a href="qr.html" data-i18n="qrCode">二维码</a>
         </footer>
-      </aside>
     </section>
   </main>
 
@@ -147,8 +129,14 @@
     </div>
   </dialog>
 
+  <dialog class="spot-dialog" id="musicDialog" aria-labelledby="musicDetailTitle">
+    <div class="dialog-panel"><button class="dialog-close" id="musicClose" type="button" aria-label="关闭 / Close">×</button>
+      <p class="dialog-meta" id="musicMeta"></p><h2 id="musicDetailTitle"></h2><p class="spot-intro" id="musicDescription"></p><p class="spot-address" id="musicTime"></p><p id="musicCountdown" aria-live="off"></p>
+      <button class="focus-button" id="musicOpen" type="button" data-i18n="openMusic">开启盲盒</button><button class="focus-button secondary" id="musicLocate" type="button" data-i18n="locate">在地图上定位</button>
+    </div>
+  </dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <noscript>此地图需要启用 JavaScript。</noscript>
-  <script type="module" src="app.js"></script>
+  <script type="module" src="app.js?v=20261112-map-view"></script>
 </body>
 </html>
