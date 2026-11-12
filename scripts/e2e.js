@@ -53,7 +53,8 @@ async function inspectViewport(browser, baseUrl, viewport, name) {
   assert.equal(await page.locator('.label-fix').count(),2);
   await page.locator('.building-tab[data-building="jq"]').click();
   assert.equal(await page.locator('.security-post').count(),2);
-  await page.locator('#searchInput').fill('台风模拟');
+  await page.locator('#searchInput').fill('43');
+  assert.equal(await page.locator('.search-result .result-no').first().textContent(),'43','exact location numbers appear first');
   await page.locator('.search-result').first().click();
   await page.locator('#spotDialog[open]').waitFor();
   assert.match(await page.locator('#spotTitle').textContent(),/台风/);

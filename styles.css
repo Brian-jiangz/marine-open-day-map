@@ -832,8 +832,11 @@ input::-webkit-search-cancel-button {
     opacity:1
   }
   .map-viewport:not(.is-fullscreen) .zoom-controls button {
-    width:40px;
-    height:40px
+    width:44px;
+    height:44px
+  }
+  .map-viewport:not(.is-fullscreen) .zoom-controls button:not(#fullscreenButton) {
+    display:none
   }
 }
 @media(prefers-reduced-motion:reduce) {

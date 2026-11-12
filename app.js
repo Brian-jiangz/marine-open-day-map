@@ -243,7 +243,10 @@ function renderBuildingTabs() {
     button.dataset.building = building.key;
     button.setAttribute('aria-selected', String(building.key === state.buildingKey));
     button.setAttribute('role', 'tab');
-    button.textContent = building.name[state.locale];
+    button.textContent = state.locale === 'en'
+      ? building.name.en.replace(/ Building$/, '')
+      : building.name.zh;
+    button.setAttribute('aria-label', building.name[state.locale]);
     button.addEventListener('click', () => selectBuilding(building.key));
     return button;
   }));
@@ -592,9 +595,11 @@ function updateSearchResults(forceOpen = false) {
   state.searchResults = allSearchRows()
     .filter((row) => row.haystack.includes(query))
     .sort((left, right) => {
+      const leftExact = normalize(left.point.no || '') === query ? 0 : 1;
+      const rightExact = normalize(right.point.no || '') === query ? 0 : 1;
       const leftStart = normalize(left.point.name[state.locale]).startsWith(query) ? 0 : 1;
       const rightStart = normalize(right.point.name[state.locale]).startsWith(query) ? 0 : 1;
-      return leftStart - rightStart || pointNumber(left.point) - pointNumber(right.point);
+      return leftExact - rightExact || leftStart - rightStart || pointNumber(left.point) - pointNumber(right.point);
     })
     .slice(0, 18);
 
