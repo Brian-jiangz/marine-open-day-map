@@ -3,7 +3,7 @@
 
 const QRCode = require('qrcode');
 
-const url = process.env.QR_URL || 'https://brian-jiangz.github.io/marine-open-day-map/';
+const url = process.env.QR_URL || 'https://brian-jiangz.github.io/marine-open-day-map/guide/';
 const root = require('path').resolve(__dirname, '..');
 
 async function main() {

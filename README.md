@@ -2,7 +2,7 @@
 
 从小程序公众导览中独立出的静态网页版，可直接部署到 GitHub Pages。页面包含：
 
-- 在线地图：<https://brian-jiangz.github.io/marine-open-day-map/>
+- 在线地图：<https://brian-jiangz.github.io/marine-open-day-map/guide/>
 - GitHub 仓库：<https://github.com/Brian-jiangz/marine-open-day-map>
 - 校园总览及周隆泉楼、希平楼、金泉楼三栋场馆地图
 - 102 个可点击点位及分组点位详情
@@ -21,6 +21,7 @@
 ```bash
 npm install
 npm run build:data
+npm run build:release
 npm run serve
 ```
 
@@ -47,7 +48,7 @@ MINIPROGRAM_ROOT=/path/to/volunteer-miniprogram/miniprogram npm run build:data
 默认指向：
 
 ```text
-https://brian-jiangz.github.io/marine-open-day-map/
+https://brian-jiangz.github.io/marine-open-day-map/guide/
 ```
 
 重新生成：
@@ -71,3 +72,5 @@ npm run test:e2e
 所有浏览偏好及盲盒开启状态仅保留在当前页面内存；网页只读取随站点发布的公共资源，不接入小程序身份、留言、点赞、报名或统计写入。未接入的后台统计不显示。
 
 校园高清图优先从小程序项目的 `docs/campus-map-20261112/` 读取，可用 `CAMPUS_MAP_ASSET_ROOT` 指定目录；不存在时使用包内校园图。已生成的 `data/map.json`、`music.js` 和图片均纳入仓库，线上运行不依赖小程序项目。
+
+发布前运行 `npm run build:release`：生成 `/guide/` 独立入口与按内容命名的样式、脚本文件，避免内置浏览器把旧界面与新数据混用。原根地址在取得新页面后会跳转到新入口，并保留点位和语言参数；已经缓存的旧 HTML 无法由服务端即时替换，可直接使用 `/guide/` 链接打开。

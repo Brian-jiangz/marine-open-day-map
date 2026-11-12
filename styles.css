@@ -12,7 +12,9 @@
 }
 html {
   background:var(--paper);
-  scroll-behavior:smooth
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%
 }
 body {
   margin:0;
@@ -26,7 +28,9 @@ button,input {
 }
 button {
   color:inherit;
-  cursor:pointer
+  cursor:pointer;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent
 }
 button:focus-visible,a:focus-visible {
   outline:3px solid #448fca;
@@ -75,7 +79,7 @@ button:active {
 }
 .tool-button {
   padding:6px 10px;
-  min-height:32px;
+  min-height:44px;
   border:1px solid #d7e5ee;
   background:#fff;
   border-radius:9px;
@@ -92,7 +96,7 @@ button:active {
   color:#69899c
 }
 .app-header h1 {
-  font-size:26px;
+  font-size:30px;
   font-weight:800;
   line-height:1.35;
   margin:7px 0;
@@ -101,7 +105,7 @@ button:active {
 .app-header p {
   margin:0;
   color:var(--muted);
-  font-size:12px
+  font-size:14px
 }
 .control-deck {
   position:sticky;
@@ -120,7 +124,7 @@ button:active {
   background:#fff;
   border-radius:9px;
   padding:8px 11px;
-  min-height:42px;
+  min-height:50px;
   color:#3a7fa4
 }
 .search-wrap input {
@@ -131,7 +135,7 @@ button:active {
   outline:0;
   background:none;
   color:var(--ink);
-  font-size:13px
+  font-size:16px
 }
 .search-wrap:focus-within {
   border-color:#448fca;
@@ -372,8 +376,8 @@ input::-webkit-search-cancel-button {
 .zoom-controls button {
   display:grid;
   place-items:center;
-  width:34px;
-  height:34px;
+  width:44px;
+  height:44px;
   color:#20669a;
   border-right:1px solid #eaf0f3
 }
@@ -479,13 +483,13 @@ input::-webkit-search-cancel-button {
 .music-copy {
   flex:1;
   min-width:0;
-  font-size:14px
+  font-size:16px
 }
 .music-copy .meta {
   display:block;
   color:var(--muted);
-  font-size:12px;
-  line-height:1.6
+  font-size:14px;
+  line-height:1.7
 }
 .music-phase {
   font-size:11px;
@@ -559,8 +563,8 @@ input::-webkit-search-cancel-button {
   right:10px;
   display:grid;
   place-items:center;
-  width:34px;
-  height:34px;
+  width:44px;
+  height:44px;
   color:var(--muted);
   font-size:25px
 }
@@ -828,8 +832,8 @@ input::-webkit-search-cancel-button {
     opacity:1
   }
   .map-viewport:not(.is-fullscreen) .zoom-controls button {
-    width:32px;
-    height:32px
+    width:40px;
+    height:40px
   }
 }
 @media(prefers-reduced-motion:reduce) {

@@ -20,7 +20,7 @@ const MIME = {
 
 function safePath(urlPath) {
   const pathname = decodeURIComponent(String(urlPath || '/').split('?')[0]);
-  const requested = pathname === '/' ? '/index.html' : pathname;
+  const requested = pathname.endsWith('/') ? pathname + 'index.html' : pathname;
   const resolved = path.resolve(root, '.' + requested);
   return resolved.startsWith(root + path.sep) ? resolved : null;
 }

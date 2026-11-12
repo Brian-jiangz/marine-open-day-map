@@ -6,7 +6,7 @@ const { chromium } = require('playwright-core');
 const { startServer } = require('./serve');
 
 async function inspectViewport(browser, baseUrl, viewport, name) {
-  const context = await browser.newContext({viewport, deviceScaleFactor:1});
+  const context = await browser.newContext({viewport, deviceScaleFactor:1, isMobile:viewport.width<700, hasTouch:viewport.width<700});
   const page = await context.newPage();
   const errors = [], requests = [];
   page.on('pageerror', error => errors.push(error.message));
@@ -14,6 +14,13 @@ async function inspectViewport(browser, baseUrl, viewport, name) {
   page.on('request', request => requests.push({url:request.url(), method:request.method()}));
   await page.goto(baseUrl, {waitUntil:'networkidle'});
   await page.waitForFunction(() => document.querySelector('#mapImage').naturalWidth > 0);
+  assert.ok(page.url().includes('/guide/'));
+  assert.equal(await page.locator('.brand-mark').count(),0);
+  assert.match(await page.locator('link[rel=stylesheet]').getAttribute('href'), /assets\/web\/styles-[a-f0-9]+\.css$/);
+  if (viewport.width < 700) {
+    assert.ok(await page.locator('#searchInput').evaluate(node=>parseFloat(getComputedStyle(node).fontSize)>=16), 'prevent automatic iPhone input zoom');
+    assert.ok((await page.locator('#languageButton').boundingBox()).height>=44, 'mobile tools have usable touch areas');
+  }
   assert.equal(await page.locator('.building-tab').count(),4);
   assert.match(await page.locator('#mapImage').getAttribute('src'),/ov_campus.jpg/);
   assert.equal(await page.locator('.security-post').count(),6);
