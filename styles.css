@@ -68,14 +68,19 @@ button:active {
   margin:auto
 }
 .app-header {
-  padding:16px 16px 19px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  column-gap:8px;
+  padding:16px;
   background:linear-gradient(145deg,#eaf4fa,#f6f8fa)
 }
 .header-actions {
+  grid-column:2;
+  grid-row:1;
+  align-self:start;
   display:flex;
   justify-content:flex-end;
-  gap:6px;
-  margin-bottom:11px
+  gap:6px
 }
 .tool-button {
   padding:6px 10px;
@@ -91,11 +96,16 @@ button:active {
   border-color:#448fca
 }
 .event-date {
+  grid-column:1;
+  grid-row:1;
+  align-self:center;
+  min-width:0;
   font-size:12px;
   letter-spacing:1px;
   color:#69899c
 }
 .app-header h1 {
+  grid-column:1 / -1;
   font-size:30px;
   font-weight:800;
   line-height:1.35;
@@ -103,6 +113,7 @@ button:active {
   letter-spacing:-.6px
 }
 .app-header p {
+  grid-column:1 / -1;
   margin:0;
   color:var(--muted);
   font-size:14px
@@ -688,8 +699,7 @@ input::-webkit-search-cancel-button {
     padding:24px 40px 30px
   }
   .header-actions {
-    gap:10px;
-    margin-bottom:18px
+    gap:10px
   }
   .tool-button {
     font-size:14px;
