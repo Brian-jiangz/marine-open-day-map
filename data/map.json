@@ -118,8 +118,8 @@
         "en": "Campus Map"
       },
       "image": {
-        "zh": "assets/map/ov_campus.jpg",
-        "en": "assets/map/ov_campus_en.jpg"
+        "zh": "assets/map/ov_campus.jpg?v=a3b6fc012bc2",
+        "en": "assets/map/ov_campus_en.jpg?v=c73da7065c40"
       },
       "floors": [],
       "categories": [],
