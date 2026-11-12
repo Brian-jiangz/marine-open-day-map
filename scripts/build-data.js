@@ -114,7 +114,6 @@ function buildBuilding(building) {
   return {
     key: building.key,
     dimensions: dimensions[building.key],
-    securityPosts: building.securityPosts || mapData.BUILDING_SECURITY_POSTS[building.key] || [],
     facilities: mapData.OVERVIEW_FACILITIES[building.key] || [],
     campusHotspots: building.campusHotspots || [],
     name: { zh: building.name, en: mapEn.BUILDINGS[building.key] || building.en },
@@ -177,7 +176,6 @@ for (const building of mapData.BUILDINGS) {
   }
 }
 
-fs.copyFileSync(path.join(sourceRoot, 'assets/security-shield.svg'), path.join(root, 'assets/security-shield.svg'));
 // Share the original timing rules without importing mini-program services or configuration.
 const musicSource = fs.readFileSync(path.join(sourceData, 'music-blind-boxes.js'), 'utf8');
 const statusStart = musicSource.indexOf('const STATUS =');

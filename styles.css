@@ -302,14 +302,6 @@ input::-webkit-search-cancel-button {
   outline:2px solid #448fca;
   background:#448fca18
 }
-.security-post {
-  position:absolute;
-  z-index:8;
-  width:13px;
-  height:15px;
-  transform:translate(-50%,-50%);
-  pointer-events:none
-}
 .medical {
   position:absolute;
   z-index:8;
@@ -337,23 +329,6 @@ input::-webkit-search-cancel-button {
   line-height:17px;
   width:19px;
   text-align:center
-}
-.safety-legend {
-  margin:9px 14px 0;
-  padding:8px 10px;
-  border-radius:9px;
-  background:#fff7e5;
-  border:1px solid #e4cd91;
-  display:flex;
-  align-items:center;
-  gap:7px;
-  color:#805613;
-  font-size:12px
-}
-.safety-legend img {
-  width:15px;
-  height:18px;
-  flex:none
 }
 .map-status {
   margin:0;
@@ -679,7 +654,7 @@ input::-webkit-search-cancel-button {
 .care-mode {
   font-size:16px
 }
-.care-mode .building-tab,.care-mode .category-chip,.care-mode .safety-legend {
+.care-mode .building-tab,.care-mode .category-chip {
   font-size:15px
 }
 .care-mode .result-meta,.care-mode .point-row-meta,.care-mode .map-status,.care-mode .music-copy .meta,.care-mode .music-phase,.care-mode .dialog-meta {
@@ -694,10 +669,6 @@ input::-webkit-search-cancel-button {
 .care-mode .tool-button {
   font-size:14px;
   min-height:38px
-}
-.care-mode .security-post {
-  width:16px;
-  height:19px
 }
 .care-mode .map-hotspot {
   width:33px;
@@ -756,7 +727,7 @@ input::-webkit-search-cancel-button {
     max-width:720px;
     margin:auto
   }
-  .card,.directory-pane,.safety-legend,.map-status,.safety-note,.points-toggle {
+  .card,.directory-pane,.map-status,.safety-note,.points-toggle {
     max-width:820px;
     margin-left:auto;
     margin-right:auto
@@ -787,22 +758,9 @@ input::-webkit-search-cancel-button {
   .music-phase {
     font-size:13px
   }
-  .safety-legend {
-    padding:12px 16px;
-    font-size:14px;
-    margin-top:14px
-  }
-  .safety-legend img {
-    width:20px;
-    height:23px
-  }
   .map-status,.safety-note {
     font-size:14px;
     padding:10px 4px
-  }
-  .security-post {
-    width:22px;
-    height:25px
   }
   .medical span {
     font-size:13px

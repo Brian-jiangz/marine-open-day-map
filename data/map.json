@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T05:08:37.082Z",
+  "generatedAt": "2026-11-12T05:32:00.981Z",
   "eventDate": "2026-11-14",
   "title": {
     "zh": "海洋科学开放日",
@@ -79,38 +79,6 @@
         845,
         590
       ],
-      "securityPosts": [
-        {
-          "id": "security-jq-east",
-          "x": 67.3,
-          "y": 47.7
-        },
-        {
-          "id": "security-jq-south",
-          "x": 62.7,
-          "y": 52
-        },
-        {
-          "id": "security-zlq-north",
-          "x": 62.1,
-          "y": 60.4
-        },
-        {
-          "id": "security-zlq-east",
-          "x": 67.6,
-          "y": 62.7
-        },
-        {
-          "id": "security-xp-west",
-          "x": 72.7,
-          "y": 63.3
-        },
-        {
-          "id": "security-zlq-south",
-          "x": 63.2,
-          "y": 68
-        }
-      ],
       "facilities": [],
       "campusHotspots": [
         {
@@ -162,23 +130,6 @@
       "dimensions": [
         800,
         1544
-      ],
-      "securityPosts": [
-        {
-          "id": "security-zlq-1f-corridor",
-          "x": 49.52,
-          "y": 76.68
-        },
-        {
-          "id": "security-zlq-1f-east",
-          "x": 86.07,
-          "y": 80.83
-        },
-        {
-          "id": "security-zlq-1f-south",
-          "x": 53.79,
-          "y": 86.05
-        }
       ],
       "facilities": [
         {
@@ -1514,13 +1465,6 @@
         800,
         1391
       ],
-      "securityPosts": [
-        {
-          "id": "security-xp-1f-south",
-          "x": 60.33,
-          "y": 84.76
-        }
-      ],
       "facilities": [],
       "campusHotspots": [],
       "name": {
@@ -2768,18 +2712,6 @@
       "dimensions": [
         800,
         1520
-      ],
-      "securityPosts": [
-        {
-          "id": "security-jq-1f-east",
-          "x": 84.55,
-          "y": 73.68
-        },
-        {
-          "id": "security-jq-1f-south",
-          "x": 47.03,
-          "y": 84.14
-        }
       ],
       "facilities": [],
       "campusHotspots": [],

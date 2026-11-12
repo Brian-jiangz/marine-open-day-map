@@ -23,8 +23,10 @@ async function inspectViewport(browser, baseUrl, viewport, name) {
   }
   assert.equal(await page.locator('.building-tab').count(),4);
   assert.match(await page.locator('#mapImage').getAttribute('src'),/ov_campus.jpg/);
-  assert.equal(await page.locator('.security-post').count(),6);
+  assert.equal(await page.locator('.security-post').count(),0);
   assert.equal(await page.locator('.campus-hot').count(),3);
+  assert.equal(await page.locator('#safetyLegend').count(),0);
+  assert.equal(await page.locator('img[src*="security-shield"]').count(),0);
   assert.equal(await page.locator('.music-card').count(),3);
   assert.equal(await page.locator('#pointsToggle').isVisible(),false);
   const ratio = await page.locator('#mapStage').evaluate(node=>node.offsetWidth/node.offsetHeight);
@@ -33,7 +35,7 @@ async function inspectViewport(browser, baseUrl, viewport, name) {
   await page.screenshot({path:path.join(__dirname,'..',`screenshots-${name}.png`), fullPage:true});
   await page.locator('.campus-hot[aria-label="周隆泉楼"]').click();
   await page.waitForFunction(()=>document.querySelector('#mapImage').src.includes('ov_zlq.jpg') && document.querySelector('#mapImage').complete);
-  assert.equal(await page.locator('.security-post').count(),3);
+  assert.equal(await page.locator('.security-post').count(),0);
   assert.equal(await page.locator('.medical').count(),1);
   assert.ok(await page.locator('.map-hotspot').count()>=40);
   const stage = await page.locator('#mapStage').boundingBox();
@@ -48,11 +50,11 @@ async function inspectViewport(browser, baseUrl, viewport, name) {
   assert.equal(await page.locator('#pointsToggle').getAttribute('aria-expanded'),'true');
   assert.ok(await page.locator('.point-row').first().isVisible());
   await page.locator('.building-tab[data-building="xp"]').click();
-  assert.equal(await page.locator('.security-post').count(),1);
+  assert.equal(await page.locator('.security-post').count(),0);
   assert.equal(await page.locator('.medical').count(),0);
   assert.equal(await page.locator('.label-fix').count(),2);
   await page.locator('.building-tab[data-building="jq"]').click();
-  assert.equal(await page.locator('.security-post').count(),2);
+  assert.equal(await page.locator('.security-post').count(),0);
   await page.locator('#searchInput').fill('43');
   assert.equal(await page.locator('.search-result .result-no').first().textContent(),'43','exact location numbers appear first');
   await page.locator('.search-result').first().click();
@@ -90,7 +92,7 @@ async function inspectViewport(browser, baseUrl, viewport, name) {
   assert.deepEqual(errors,[]);
   assert.ok(requests.every(request=>request.url.startsWith(baseUrl) && request.method==='GET'),'only local public resources requested');
   await context.close();
-  return {viewport, errors:errors.length, securityPosts:12, medical:true, search:true, zoom:true, languages:true};
+  return {viewport, errors:errors.length, securityPosts:0, medical:true, search:true, zoom:true, languages:true};
 }
 
 async function main(){
@@ -120,7 +122,7 @@ async function main(){
     await page.locator('.building-tab[data-building="campus"]').click();
     await page.locator('#mapHotspots').click({position:{x:10,y:120}});
     await page.waitForFunction(()=>document.querySelector('#mapViewport').classList.contains('is-fullscreen'));
-    assert.equal(await page.locator('.security-post').count(),6);
+    assert.equal(await page.locator('.security-post').count(),0);
     await page.keyboard.press('Escape');
     await page.goto(baseUrl+'qr.html');
     assert.ok(await page.locator('img[src="qr-code.png"]').evaluate(node=>node.complete&&node.naturalWidth>0));

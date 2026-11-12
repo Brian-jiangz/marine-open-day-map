@@ -7,7 +7,6 @@ const I18N = {
     siteTitle: '海洋科学开放日',
     siteSubtitle: '场馆地图与参观指引',
     careShort: '关怀版',
-    safety: '安全保障 · 安保值班室',
     music: '音乐盲盒',
     openMusic: '开启盲盒',
     safetyNote: '请遵循现场工作人员与志愿者指引，注意脚下安全。',
@@ -36,7 +35,6 @@ const I18N = {
     siteTitle: 'Marine Science Open Day',
     siteSubtitle: 'Venue map and visitor guide',
     careShort: 'Large text',
-    safety: 'Safety & Security · Security Duty Room',
     music: 'Mystery Music Boxes',
     openMusic: 'Open music box',
     safetyNote: 'Follow staff guidance and watch your step.',
@@ -282,7 +280,6 @@ function renderMap() {
   renderHotspots();
 
   elements.mapViewport.style.aspectRatio = building.dimensions.join(' / ');
-  document.getElementById('safetyLegend').hidden = !building.securityPosts.length;
   renderMusic();
   const src = building.image[state.locale];
   const finish = () => {
@@ -337,12 +334,6 @@ function renderMapExtras() {
     button.setAttribute('aria-label', state.locale === 'zh' ? hot.label : hot.labelEn);
     button.addEventListener('click', event => { event.stopPropagation(); selectBuilding(hot.key); });
     elements.mapHotspots.append(button);
-  }
-  for (const post of building.securityPosts) {
-    const img = document.createElement('img');
-    img.className = 'map-extra security-post'; img.src = 'assets/security-shield.svg'; img.alt = t('safety');
-    img.style.left = `${post.x}%`; img.style.top = `${post.y}%`;
-    elements.mapHotspots.append(img);
   }
   for (const facility of building.facilities) {
     const marker = document.createElement('div'); marker.className = 'map-extra medical';
